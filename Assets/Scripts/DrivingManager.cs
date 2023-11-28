@@ -45,15 +45,7 @@ public class DrivingManager : MonoBehaviour
 
     private void Update()
     {
-        MovementHandler();
-    }
-
-    /*--------------------Handler Functions--------------------*/
-
-    // Takes in player input (A/D and arrow keys) and translates that into lane changing
-    private void MovementHandler()
-    {
-
+        
     }
 
     /*--------------------Level Management Functions--------------------*/
@@ -106,15 +98,11 @@ public class DrivingManager : MonoBehaviour
 
             // Walk down the massive wall of cars, deleting anything in the way
 
-            for (int y = 0; y < length; y++)
+            for (int y = 0; y < length - startDelay; y++)
             {
-                // Clear out the car at the next position
+                // Clear out the car at the current position
 
-                if (y + 1 >= length)
-                    break;
-
-                if (cars[y + 1, lane] != null)
-                    Destroy(cars[y + 1, lane]);
+                Destroy(cars[y, lane]);
 
                 // Choose a direction to move from here
                 // 0 = left
@@ -130,13 +118,12 @@ public class DrivingManager : MonoBehaviour
                 else
                     dir = Random.Range(0, 3);
 
-                print(dir);
-
                 switch (dir)
                 {
                     case 0:
                         // Move left next time
                         lane -= 1;
+                        Destroy(cars[y, lane]);
                         break;
                     case 1:
                         // Do nothing
@@ -144,11 +131,41 @@ public class DrivingManager : MonoBehaviour
                     case 2:
                         // Move right next time
                         lane += 1;
+                        Destroy(cars[y, lane]);
                         break;
                     default:
                         Debug.LogError("ERROR: How did this even happen? Check the driving manager script, this shouldn't be possible");
                         break;
                 }
+            }
+        }
+
+        // Count up all cars still left on the road
+
+        int carCount = 0;
+
+        for (int y = 0; y < length - startDelay; y++)
+        {
+            for (int x = 0; x < lanes; x++)
+            {
+                if (cars[y, x] != null)
+                    carCount += 1;
+            }
+        }
+
+        // If the amount of cars on the road is greater than the amount of cars to spawn, then get rid of cars at random until the target has been reached
+
+        print(carCount);
+        
+        while (carCount - 1 > carsToSpawn)
+        {
+            int x = Random.Range(0, lanes);
+            int y = Random.Range(0, length - startDelay);
+
+            if (cars[y, x] != null)
+            {
+                DestroyImmediate(cars[y, x]);
+                carCount -= 1;
             }
         }
     }

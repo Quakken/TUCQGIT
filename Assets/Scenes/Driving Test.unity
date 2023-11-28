@@ -242,8 +242,9 @@ GameObject:
   - component: {fileID: 465646407}
   - component: {fileID: 465646410}
   - component: {fileID: 465646411}
-  - component: {fileID: 465646409}
   - component: {fileID: 465646412}
+  - component: {fileID: 465646409}
+  - component: {fileID: 465646413}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -332,20 +333,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tags:
   - Obstacle
-  OnCollision:
+  onCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1969664222}
-        m_TargetAssemblyTypeName: DrivingManager, Assembly-CSharp
-        m_MethodName: OnPlayerCrash
-        m_Mode: 1
+      - m_Target: {fileID: 465646413}
+        m_TargetAssemblyTypeName: EventUtils, Assembly-CSharp
+        m_MethodName: SpawnAtPosition
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 225124310684958007, guid: 632df9663c6c0014fbe1ef13e7755b0f, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 465646413}
+        m_TargetAssemblyTypeName: EventUtils, Assembly-CSharp
+        m_MethodName: ShakeScreen
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 465646406}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -355,7 +368,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0
+          m_FloatArgument: 2
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -422,6 +435,19 @@ MonoBehaviour:
   twoD: 0
   moveDimension: 0
   movementSpeed: 30
+--- !u!114 &465646413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465646406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b0ba4f19800f40991b0e0c3591137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0.5
 --- !u!1 &1969664220
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,7 +495,7 @@ MonoBehaviour:
   lanes: 4
   length: 250
   startDelay: 5
-  carsToSpawn: 500
+  carsToSpawn: 250
   paths: 1
   carPrefab: {fileID: 7471303174905977664, guid: 99abf6f089ac2864db9f52391ca4a7ee, type: 3}
   roadPrefab: {fileID: 7055437397548371634, guid: 8fdc65843ea0f3b4985e414c876da311, type: 3}

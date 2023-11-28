@@ -18,7 +18,7 @@ public class EventOnCollide : MonoBehaviour
     [SerializeField] string[] tags;
     [Header("Events")]
     [Tooltip("Event called when the object collides with something else")]
-    [SerializeField] UnityEvent OnCollision;
+    [SerializeField] UnityEvent onCollision;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -26,7 +26,7 @@ public class EventOnCollide : MonoBehaviour
         {
             if (collision.transform.CompareTag(tags[i]))
             {
-                OnCollision.Invoke();
+                onCollision.Invoke();
             }
         }
     }
@@ -37,7 +37,7 @@ public class EventOnCollide : MonoBehaviour
         {
             if (collision.transform.CompareTag(tags[i]))
             {
-                OnCollision.Invoke();
+                onCollision.Invoke();
             }
         }
     }

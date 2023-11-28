@@ -29,6 +29,8 @@ public class DrivingManager : MonoBehaviour
     [Header("Assets")]
     [SerializeField] GameObject carPrefab;
     [SerializeField] GameObject roadPrefab;
+    [Tooltip("Objects to spawn along the side of the road")]
+    [SerializeField] GameObject[] scenery;
 
     GameObject[,] roads;
     GameObject[,] cars;
@@ -40,7 +42,7 @@ public class DrivingManager : MonoBehaviour
         // Cap the start delay to the length of the road (when it will not spawn any cars?)
         startDelay = Mathf.Clamp(startDelay, 3, length);
 
-        GenerateLevel();
+        GenerateRoad();
     }
 
     private void Update()
@@ -50,7 +52,7 @@ public class DrivingManager : MonoBehaviour
 
     /*--------------------Level Management Functions--------------------*/
 
-    private void GenerateLevel()
+    private void GenerateRoad()
     {
         // Create the road
 
@@ -166,6 +168,15 @@ public class DrivingManager : MonoBehaviour
                 carCount -= 1;
             }
         }
+    }
+
+    private void GenerateScenery()
+    {
+        // Create the scenery for one side of the road
+
+        // Choose a random object to spawn
+
+        GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
     }
 
     /*--------------------Utility Functions--------------------*/

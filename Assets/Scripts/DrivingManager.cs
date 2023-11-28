@@ -154,8 +154,6 @@ public class DrivingManager : MonoBehaviour
         }
 
         // If the amount of cars on the road is greater than the amount of cars to spawn, then get rid of cars at random until the target has been reached
-
-        print(carCount);
         
         while (carCount - 1 > carsToSpawn)
         {
@@ -175,6 +173,6 @@ public class DrivingManager : MonoBehaviour
     // Called when the player runs into an obstacle
     public void OnPlayerCrash()
     {
-
+        Debug.LogError("You lose");
     }
 }

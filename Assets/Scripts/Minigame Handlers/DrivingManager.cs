@@ -36,7 +36,7 @@ public class DrivingManager : MonoBehaviour
     [SerializeField][Min(1)] int paths = 2;
 
     [Header("Assets")]
-    [SerializeField] GameObject carPrefab;
+    [SerializeField] GameObject[] carPrefabs;
     [SerializeField] GameObject roadPrefab;
     [Tooltip("Objects to spawn along the side of the road")]
     [SerializeField] GameObject[] scenery;
@@ -97,7 +97,9 @@ public class DrivingManager : MonoBehaviour
             for (int x = 0; x < lanes; x++) // Loop through the columns of the road
             {
                 // Spawn a car there
-                GameObject instance = Instantiate(carPrefab, roads[y, x].transform.position, carPrefab.transform.rotation);
+                GameObject toSpawn = carPrefabs[Random.Range(0, carPrefabs.Length)];
+
+                GameObject instance = Instantiate(toSpawn, roads[y, x].transform.position, toSpawn.transform.rotation);
                 cars[y - startDelay, x] = instance;
             }
         }

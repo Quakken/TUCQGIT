@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4165430114970303832}
   - component: {fileID: -4615603707923878035}
   m_Layer: 0
-  m_Name: TempCar
+  m_Name: Fish Car
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 21603daa6de65eb4cb83a055bf7f6055, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 61c20f2884aac404a86e14937999c3a4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: 0, y: 0, z: -1}
-  moveSpeed: 20
+  moveSpeed: 45
 --- !u!65 &-4615603707923878035
 BoxCollider:
   m_ObjectHideFlags: 0

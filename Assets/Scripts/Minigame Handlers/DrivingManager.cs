@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DrivingManager : MonoBehaviour
 {
@@ -42,6 +43,9 @@ public class DrivingManager : MonoBehaviour
 
     GameObject[,] roads;
     GameObject[,] cars;
+
+    [Header("Events")]
+    [SerializeField] UnityEvent onCrash;
 
     /*--------------------Unity Functions--------------------*/
 
@@ -240,5 +244,6 @@ public class DrivingManager : MonoBehaviour
     public void OnPlayerCrash()
     {
         Debug.LogError("You lose");
+        onCrash.Invoke();
     }
 }

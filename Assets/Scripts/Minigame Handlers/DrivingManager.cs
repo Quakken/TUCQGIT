@@ -10,17 +10,25 @@ using UnityEngine;
 
 public class DrivingManager : MonoBehaviour
 {
-    [Header("Config")]
+    [Header("Road Config")]
     [Tooltip("How many lanes the level generates")]
     [SerializeField][Range(2, 10)] int lanes = 2;
     [Tooltip("How many 'rows' of roads to spawn. Pretty much how long the level should be")]
     [SerializeField] int length = 50;
 
-    [Space]
+    [Header("Car Config")]
     [Tooltip("How many rows to wait before spawning the first car")]
     [SerializeField][Min(3)] int startDelay = 10;
     [Tooltip("The number of cars to spawn. Increase this number to increase difficulty")]
     [SerializeField] int carsToSpawn = 50;
+
+    [Header("Scenery Config")]
+    [Tooltip("How far from the edge of the road the scenery can spawn")]
+    [SerializeField] float xOffsetVariance;
+    [Tooltip("How big of a gap there should be between all scenery pieces")]
+    [SerializeField][Range(0, 50)] float minSceneryGap;
+    [Tooltip("How big the gap between scenery pieces CAN be")]
+    [SerializeField][Range(0, 100)] float maxSceneryGap;
 
     [Space]
     [Tooltip("How many paths to spawn that will guarantee a way to the end of the level")]
@@ -42,7 +50,12 @@ public class DrivingManager : MonoBehaviour
         // Cap the start delay to the length of the road (when it will not spawn any cars?)
         startDelay = Mathf.Clamp(startDelay, 3, length);
 
+        // Cap the scenery gap stuff
+        maxSceneryGap = Mathf.Clamp(maxSceneryGap, minSceneryGap, float.MaxValue);
+
         GenerateRoad();
+
+        GenerateScenery();
     }
 
     private void Update()
@@ -65,7 +78,7 @@ public class DrivingManager : MonoBehaviour
             for (int x = 0; x < lanes; x++) // Loop through the columns of the road
             {
                 // Spawn a road tile
-                Vector3 posToSpawn = new Vector3(x * roadPrefab.transform.localScale.x, 0, y * roadPrefab.transform.localScale.y);
+                Vector3 posToSpawn = new Vector3(x * roadPrefab.transform.lossyScale.x, 0, y * roadPrefab.transform.lossyScale.y);
                 GameObject instance = Instantiate(roadPrefab, posToSpawn, roadPrefab.transform.rotation, roadParent.transform);
                 roads[y, x] = instance;
             }
@@ -172,11 +185,53 @@ public class DrivingManager : MonoBehaviour
 
     private void GenerateScenery()
     {
-        // Create the scenery for one side of the road
+        // Create the scenery for the left side of the road
 
-        // Choose a random object to spawn
+        float zOffset = 0;
 
-        GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+        // Keep spawning scenery until it reaches the end of the road
+
+        while (zOffset < length * roadPrefab.transform.lossyScale.z)
+        {
+            // Choose a random object to spawn
+
+            GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+
+            // Add a random amount to the spawn offset
+
+            zOffset += Random.Range(minSceneryGap, maxSceneryGap);
+
+            // Get the x offset
+
+            float xOffset = Random.Range(-xOffsetVariance, 0);
+
+            // Spawn the scenery
+
+            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+        }
+
+        // Then do it for the other side of the road
+
+        zOffset = 0;
+
+        while (zOffset < length * roadPrefab.transform.lossyScale.z)
+        {
+            // Choose a random object to spawn
+
+            GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+
+            // Add a random amount to the spawn offset
+
+            zOffset += Random.Range(minSceneryGap, maxSceneryGap);
+
+            // Get the x offset
+
+            float xOffset = Random.Range(0, xOffsetVariance);
+
+            // Spawn the scenery
+
+            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1) * roadPrefab.transform.lossyScale.x + toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+        }
     }
 
     /*--------------------Utility Functions--------------------*/

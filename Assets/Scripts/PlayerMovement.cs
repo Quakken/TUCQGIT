@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Config")]
     [Tooltip("Is the player using 2D physics?")]
     [SerializeField] bool twoD = true;
+    [SerializeField] bool useRawInput;
 
     [Space]
     [Tooltip("The axis the player should be able to move along")]
@@ -49,7 +50,14 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 input;
+
+        if (useRawInput)
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        else
+            input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+
 
         // Moves the player based on their input. This is messy and ugly, but it should theorhetically work
 

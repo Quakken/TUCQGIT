@@ -62,11 +62,6 @@ public class DrivingManager : MonoBehaviour
         GenerateScenery();
     }
 
-    private void Update()
-    {
-        
-    }
-
     /*--------------------Level Management Functions--------------------*/
 
     private void GenerateRoad()
@@ -90,6 +85,8 @@ public class DrivingManager : MonoBehaviour
 
         // Spawn the cars
 
+        GameObject carParent = new GameObject("Car Holder");
+
         cars = new GameObject[length - startDelay, lanes];
 
         for (int y = startDelay; y < length; y++) // Loop through all the rows of the road that come after the start delay
@@ -99,7 +96,7 @@ public class DrivingManager : MonoBehaviour
                 // Spawn a car there
                 GameObject toSpawn = carPrefabs[Random.Range(0, carPrefabs.Length)];
 
-                GameObject instance = Instantiate(toSpawn, roads[y, x].transform.position, toSpawn.transform.rotation);
+                GameObject instance = Instantiate(toSpawn, roads[y, x].transform.position, toSpawn.transform.rotation, carParent.transform);
                 cars[y - startDelay, x] = instance;
             }
         }
@@ -187,11 +184,24 @@ public class DrivingManager : MonoBehaviour
                 carCount -= 1;
             }
         }
+
+        // Add boundaries to both sides of the road
+        GameObject wall1 = new GameObject("Barrier");
+        wall1.AddComponent<BoxCollider>();
+        wall1.transform.position = new Vector3(-5 - (roadPrefab.transform.lossyScale.x * 0.5f), 5, length * roadPrefab.transform.lossyScale.z / 2 - 3);
+        wall1.transform.localScale = new Vector3(10, 10, length * roadPrefab.transform.lossyScale.z);
+
+        GameObject wall2 = new GameObject("Barrier2");
+        wall2.AddComponent<BoxCollider>();
+        wall2.transform.position = new Vector3(roadPrefab.transform.lossyScale.x * (lanes - 0.5f) + 5, 5, length * roadPrefab.transform.lossyScale.z / 2 - 3);
+        wall2.transform.localScale = new Vector3(10, 10, length * roadPrefab.transform.lossyScale.z);
     }
 
     private void GenerateScenery()
     {
         // Create the scenery for the left side of the road
+
+        GameObject sceneryParent = new GameObject("Scenery Holder");
 
         float zOffset = 0;
 
@@ -213,7 +223,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.lossyScale.x, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
 
         // Then do it for the other side of the road
@@ -236,7 +246,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1) * roadPrefab.transform.lossyScale.x + toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1) * roadPrefab.transform.lossyScale.x + toSpawn.transform.lossyScale.x, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
     }
 

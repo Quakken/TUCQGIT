@@ -26,4 +26,9 @@ public class EventUtils : MonoBehaviour
     {
         SceneLoader.LoadScene(toLoad);
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

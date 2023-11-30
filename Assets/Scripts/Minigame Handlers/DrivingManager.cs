@@ -46,6 +46,7 @@ public class DrivingManager : MonoBehaviour
 
     [Header("Events")]
     [SerializeField] UnityEvent onCrash;
+    [SerializeField] UnityEvent onWin;
 
     /*--------------------Unity Functions--------------------*/
 
@@ -223,7 +224,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.lossyScale.x, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
+            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
 
         // Then do it for the other side of the road
@@ -246,7 +247,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1) * roadPrefab.transform.lossyScale.x + toSpawn.transform.lossyScale.x, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
+            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1.5f) * roadPrefab.transform.lossyScale.x + toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
     }
 
@@ -257,5 +258,11 @@ public class DrivingManager : MonoBehaviour
     {
         Debug.LogError("You lose");
         onCrash.Invoke();
+    }
+
+    // Called when the player survives :D
+    public void OnPlayerWin()
+    {
+        onWin.Invoke();
     }
 }

@@ -21,4 +21,14 @@ public class EventUtils : MonoBehaviour
     {
         Camera.main.GetComponent<CameraFollow>().ShakeScreen(shakeDuration, shakeMag);
     }
+
+    public void LoadScene(string toLoad)
+    {
+        SceneLoader.LoadScene(toLoad);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

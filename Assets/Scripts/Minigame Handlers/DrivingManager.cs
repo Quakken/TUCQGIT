@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class DrivingManager : MonoBehaviour
 {
@@ -35,13 +36,17 @@ public class DrivingManager : MonoBehaviour
     [SerializeField][Min(1)] int paths = 2;
 
     [Header("Assets")]
-    [SerializeField] GameObject carPrefab;
+    [SerializeField] GameObject[] carPrefabs;
     [SerializeField] GameObject roadPrefab;
     [Tooltip("Objects to spawn along the side of the road")]
     [SerializeField] GameObject[] scenery;
 
     GameObject[,] roads;
     GameObject[,] cars;
+
+    [Header("Events")]
+    [SerializeField] UnityEvent onCrash;
+    [SerializeField] UnityEvent onWin;
 
     /*--------------------Unity Functions--------------------*/
 
@@ -56,11 +61,6 @@ public class DrivingManager : MonoBehaviour
         GenerateRoad();
 
         GenerateScenery();
-    }
-
-    private void Update()
-    {
-        
     }
 
     /*--------------------Level Management Functions--------------------*/
@@ -86,6 +86,8 @@ public class DrivingManager : MonoBehaviour
 
         // Spawn the cars
 
+        GameObject carParent = new GameObject("Car Holder");
+
         cars = new GameObject[length - startDelay, lanes];
 
         for (int y = startDelay; y < length; y++) // Loop through all the rows of the road that come after the start delay
@@ -93,7 +95,9 @@ public class DrivingManager : MonoBehaviour
             for (int x = 0; x < lanes; x++) // Loop through the columns of the road
             {
                 // Spawn a car there
-                GameObject instance = Instantiate(carPrefab, roads[y, x].transform.position, carPrefab.transform.rotation);
+                GameObject toSpawn = carPrefabs[Random.Range(0, carPrefabs.Length)];
+
+                GameObject instance = Instantiate(toSpawn, roads[y, x].transform.position, toSpawn.transform.rotation, carParent.transform);
                 cars[y - startDelay, x] = instance;
             }
         }
@@ -181,11 +185,24 @@ public class DrivingManager : MonoBehaviour
                 carCount -= 1;
             }
         }
+
+        // Add boundaries to both sides of the road
+        GameObject wall1 = new GameObject("Barrier");
+        wall1.AddComponent<BoxCollider>();
+        wall1.transform.position = new Vector3(-5 - (roadPrefab.transform.lossyScale.x * 0.5f), 5, length * roadPrefab.transform.lossyScale.z / 2 - 3);
+        wall1.transform.localScale = new Vector3(10, 10, length * roadPrefab.transform.lossyScale.z);
+
+        GameObject wall2 = new GameObject("Barrier2");
+        wall2.AddComponent<BoxCollider>();
+        wall2.transform.position = new Vector3(roadPrefab.transform.lossyScale.x * (lanes - 0.5f) + 5, 5, length * roadPrefab.transform.lossyScale.z / 2 - 3);
+        wall2.transform.localScale = new Vector3(10, 10, length * roadPrefab.transform.lossyScale.z);
     }
 
     private void GenerateScenery()
     {
         // Create the scenery for the left side of the road
+
+        GameObject sceneryParent = new GameObject("Scenery Holder");
 
         float zOffset = 0;
 
@@ -207,7 +224,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
 
         // Then do it for the other side of the road
@@ -230,7 +247,7 @@ public class DrivingManager : MonoBehaviour
 
             // Spawn the scenery
 
-            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1) * roadPrefab.transform.lossyScale.x + toSpawn.transform.lossyScale.x, toSpawn.transform.lossyScale.y / 2, zOffset), toSpawn.transform.rotation);
+            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1.5f) * roadPrefab.transform.lossyScale.x + toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
         }
     }
 
@@ -240,5 +257,12 @@ public class DrivingManager : MonoBehaviour
     public void OnPlayerCrash()
     {
         Debug.LogError("You lose");
+        onCrash.Invoke();
+    }
+
+    // Called when the player survives :D
+    public void OnPlayerWin()
+    {
+        onWin.Invoke();
     }
 }

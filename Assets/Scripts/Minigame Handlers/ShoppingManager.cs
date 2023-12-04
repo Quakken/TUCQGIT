@@ -2,12 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ShoppingManager : MonoBehaviour
 {
     [System.Serializable]
     public struct FoodType
     {
+        [Tooltip("The image of the food the player is looking for")]
+        public Sprite realFoodSprite;
+        [Tooltip("How long the player has to find the right food")]
+        public float length;
+        [Tooltip("All of the food objects to spawn. Increase/duplicate fake foods to increase their spawn rate")]
         public GameObject[] foodPrefabs;
     }
 
@@ -20,11 +26,15 @@ public class ShoppingManager : MonoBehaviour
     [SerializeField][Range(1, 8)] int minItemsPerShelf = 1;
     [Tooltip("The most amount of items a shelf can have")]
     [SerializeField][Range(1, 8)] int maxItemsPerShelf = 4;
+    [Space]
+    [SerializeField] TimerCountdown timer;
 
     private bool spawnShelves = true;
 
 
     [Header("Assets")]
+    [Tooltip("The object that has the real image to display")]
+    [SerializeField] Image realImage;
     [Tooltip("The shelf object to spawn")]
     [SerializeField] GameObject shelfPrefab;
     [Tooltip("Contents of each stage. Each entry should have a different type of food")]
@@ -35,8 +45,10 @@ public class ShoppingManager : MonoBehaviour
     private int stageIndex;
 
     [Header("Events")]
-    [SerializeField] UnityEvent onStageComplete;
-    [SerializeField] UnityEvent onFail;
+    [SerializeField] UnityEvent onStageComplete; // Called when the player completes one stage
+    [SerializeField] UnityEvent onStageGenerated; // Called whenever a new stage is made
+    [SerializeField] UnityEvent onFail; // Called whenever the player clicks the wrong food or runs out of time
+    [SerializeField] UnityEvent onGameWon; // Called only when the player completes all stages
 
     // Globally accessable instance of this script
     public static ShoppingManager instance;
@@ -81,11 +93,15 @@ public class ShoppingManager : MonoBehaviour
 
         SetShelfSpawn(false);
 
+        // Stop the timer
+        timer.StopTimer();
+
         // If it's the last stage, have the player win. Otherwise, start the next level
 
         if (stageIndex >= aisles.Length)
         {
             print("YOU WIN!");
+            onGameWon.Invoke();
         }
         else
         {
@@ -93,8 +109,24 @@ public class ShoppingManager : MonoBehaviour
         }
     }
 
+    // Fails the player. Called when they click the wrong food or time runs out
+    public void Fail()
+    {
+        // Clear all the foods
+        for (int i = 0; i < food.Count; i++)
+        {
+            Destroy(food[i]);
+        }
+
+        // Stop spawning shelves
+        SetShelfSpawn(false);
+
+        // Fail them lol
+        onFail.Invoke();
+    }
+
     // Creates a level based on the current food/level. Should only be called when a level is first started
-    private void GenerateLevel()
+    public void GenerateLevel()
     {
         shelves = new List<GameObject>();
         food = new List<GameObject>();
@@ -126,6 +158,15 @@ public class ShoppingManager : MonoBehaviour
 
         // Start automatically spawning shelves
         SetShelfSpawn(true);
+
+        // Set the timer
+        timer.SetTimer(aisles[stageIndex].length);
+        timer.StartTimer();
+
+        // Change the real food image
+        realImage.sprite = aisles[stageIndex].realFoodSprite;
+
+        onStageGenerated.Invoke();
     }
 
     // Spawns a single shelf object at the end of the aisle, filled with a random amount of food
@@ -167,22 +208,22 @@ public class ShoppingManager : MonoBehaviour
 
     /*--------------------Utility Functions--------------------*/
 
-    public void CheckFood(Food food)
+    public void CheckFood(Food foodToCheck)
     {
         // Check to see if the food the player clicks is fake
-        if (!food.isFake)
+        if (!foodToCheck.isFake)
         {
             // If it's not, advance the stage
             AdvanceStage();
         }
         else
         {
-            onFail.Invoke();
+            // If it is fake, they lose
+            Fail();
         }
     }
 
     // Function that toggles the automatic shelf spawning
-
     public void SetShelfSpawn(bool val)
     {
         spawnShelves = val;

@@ -7,15 +7,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Food : MonoBehaviour
 {
     [Header("Config")]
     public bool isFake = true;
 
+    [SerializeField] UnityEvent onClick;
+
     // When the player clicks on the food, let the shopping manager know
     private void OnMouseDown()
     {
         ShoppingManager.instance.CheckFood(this);
+        onClick.Invoke();
     }
 }

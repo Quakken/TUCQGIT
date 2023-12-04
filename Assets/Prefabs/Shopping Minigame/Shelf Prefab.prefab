@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3847712916953655165}
   - component: {fileID: 3813117443453602638}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelf body (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4889300867046549567}
   - component: {fileID: 9107768822096724889}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelf body (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8680196780618963712}
   - component: {fileID: 3648982155040939776}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelf body (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -262,7 +262,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7068381954014442339}
   - component: {fileID: 2802116302213426360}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelf top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5845139641406934015}
   - component: {fileID: 2530483270756406714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: shelf body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -430,7 +430,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2026084336967732053}
   - component: {fileID: 5670292650621920005}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Shelf Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,4 +470,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   direction: {x: -1, y: 0, z: 0}
-  moveSpeed: 2
+  moveSpeed: 5

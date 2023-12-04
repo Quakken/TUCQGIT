@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Driving Test.unity
     guid: 74e3d383e2d84384aae56fbd7a615446
+  - enabled: 1
+    path: Assets/Scenes/Shopping Test.unity
+    guid: 45785a9a92ee36c4e9201bbf35879077
   m_configObjects: {}

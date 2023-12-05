@@ -56,4 +56,14 @@ public class TimerCountdown : MonoBehaviour
     {
         timerStarts = false;
     }
+
+    public void StartTimer()
+    {
+        timerStarts = true;
+    }
+
+    public void SetTimer(float duration)
+    {
+        secondsRemaining = duration;
+    }
 }

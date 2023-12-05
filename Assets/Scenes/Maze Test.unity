@@ -9279,7 +9279,7 @@ SpriteRenderer:
   m_Sprite: {fileID: 21300000, guid: 6064b3c7541e95b41aa95e9525758cab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 78.14692, y: 57.65625}
   m_AdaptiveModeThreshold: 0.5
@@ -9315,8 +9315,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   twoD: 1
+  useRawInput: 0
   moveDimension: 2
   movementSpeed: 2.5
+  turnToDirection: 1
+  turnSpeed: 0
 --- !u!50 &1705989072
 Rigidbody2D:
   serializedVersion: 4

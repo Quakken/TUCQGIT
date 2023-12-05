@@ -12,7 +12,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 2fbec6c17042db943848f95853892144
   - enabled: 1
-    path: Assets/Scenes/Driving Test.unity
+    path: Assets/Scenes/Driving Part 1.unity
+    guid: 84293af239e8e224daa023d23e3a1194
+  - enabled: 1
+    path: Assets/Scenes/Driving Part 2.unity
     guid: 74e3d383e2d84384aae56fbd7a615446
   - enabled: 1
     path: Assets/Scenes/Shopping Test.unity

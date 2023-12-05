@@ -3923,9 +3923,9 @@ MonoBehaviour:
   maxSceneryGap: 23.9
   paths: 3
   carPrefabs:
-  - {fileID: 8259826513068461994, guid: be543f377d6c23247b12aa03eacd4d3c, type: 3}
-  - {fileID: 7471303174905977664, guid: 99abf6f089ac2864db9f52391ca4a7ee, type: 3}
-  - {fileID: 4569921327414963793, guid: be03858ba7d67954dbe16fcee6696763, type: 3}
+  - {fileID: 1094264764799963380, guid: f01c50a0b6608f042b7b5cac58d657ae, type: 3}
+  - {fileID: 7436057742324929091, guid: a1f9cca3bd1864a4a98c380e3c22a263, type: 3}
+  - {fileID: 6759872984898965372, guid: d0d36f6df92289545a8eff9b9da5cf8a, type: 3}
   roadPrefab: {fileID: 7055437397548371634, guid: 8fdc65843ea0f3b4985e414c876da311, type: 3}
   scenery:
   - {fileID: 3361545598145824861, guid: b78edc905a7011c4b83ad7dd1c762b43, type: 3}

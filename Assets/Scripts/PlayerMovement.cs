@@ -15,12 +15,19 @@ public class PlayerMovement : MonoBehaviour
     [Header("Config")]
     [Tooltip("Is the player using 2D physics?")]
     [SerializeField] bool twoD = true;
+    [SerializeField] bool useRawInput;
 
     [Space]
     [Tooltip("The axis the player should be able to move along")]
     [SerializeField] MoveDimensions moveDimension;
     [Tooltip("How fast the player moves")]
     [SerializeField] float movementSpeed;
+
+    [Space]
+    [Tooltip("Should the player turn in the direction they're facing?")]
+    [SerializeField] bool turnToDirection = true;
+    [Tooltip("How fast/extreme the turn should be for 2D/1D movement")]
+    [SerializeField] float turnSpeed;
 
     Rigidbody rb;
     Rigidbody2D rb2D;
@@ -43,7 +50,14 @@ public class PlayerMovement : MonoBehaviour
     
     private void Update()
     {
-        Vector2 input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        Vector2 input;
+
+        if (useRawInput)
+            input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        else
+            input = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
+
 
         // Moves the player based on their input. This is messy and ugly, but it should theorhetically work
 
@@ -53,12 +67,27 @@ public class PlayerMovement : MonoBehaviour
             {
                 case MoveDimensions.X:
                     rb2D.velocity = new Vector2(input.x * movementSpeed, 0);
+
+                    if (turnToDirection && input.x != 0)
+                    {
+                        // Tilt the player on the Z axis to face the direction they're moving in
+                        transform.rotation = Quaternion.AngleAxis(turnSpeed * -input.x, Vector3.forward);
+                    }
                     break;
                 case MoveDimensions.Y:
                     rb2D.velocity = new Vector2(0, input.y * movementSpeed);
+
+                    if (turnToDirection && input.y != 0)
+                    {
+                        // Tilt the player on the Z axis to face the direction they're moving in
+                        transform.rotation = Quaternion.AngleAxis(turnSpeed * -input.y, Vector3.forward);
+                    }
                     break;
                 case MoveDimensions.XY:
                     rb2D.velocity = input.normalized * movementSpeed;
+
+                    // Turn to face the direction the player is moving towards
+                    transform.up = input.normalized;
                     break;
             }
         }
@@ -68,12 +97,27 @@ public class PlayerMovement : MonoBehaviour
             {
                 case MoveDimensions.X:
                     rb.velocity = new Vector3(input.x * movementSpeed, 0, 0);
+
+                    if (turnToDirection && input.x != 0)
+                    {
+                        // Tilt the player on the Z axis to face the direction they're moving in
+                        transform.rotation = Quaternion.AngleAxis(turnSpeed * -input.x, Vector3.forward);
+                    }
                     break;
                 case MoveDimensions.Y:
                     rb.velocity = new Vector3(0, input.y * movementSpeed, 0);
+
+                    if (turnToDirection && input.y != 0)
+                    {
+                        // Tilt the player on the Z axis to face the direction they're moving in
+                        transform.rotation = Quaternion.AngleAxis(turnSpeed * -input.y, Vector3.forward);
+                    }
                     break;
                 case MoveDimensions.XY:
                     rb.velocity = (Vector3)input.normalized * movementSpeed;
+
+                    // Turn to face the direction the player is moving towards
+                    transform.up = input.normalized;
                     break;
             }
         }

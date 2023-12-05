@@ -197,9 +197,23 @@ public class ShoppingManager : MonoBehaviour
 
                 // Spawn the food at a random position on the shelf
 
-                Transform spawnTransform = shelves[shelves.Count - 1].GetComponentsInChildren<Transform>()[Random.Range(0, shelves[shelves.Count - 1].GetComponentsInChildren<Transform>().Length - 1)].transform;
+                int shelfIndex = Random.Range(0, shelves[shelves.Count - 1].GetComponentsInChildren<Transform>().Length - 1);
 
-                // This will work sort of, but it will allow foods to overlap each other
+                // Check if there are any other food objects on that shelf, and if there are then get a new shelf
+
+                Collider2D[] otherFood = Physics2D.OverlapCircleAll(shelves[shelves.Count - 1].GetComponentsInChildren<Transform>()[shelfIndex].transform.position, 0.25f);
+
+                while (otherFood.Length > 0)
+                {
+                    shelfIndex = Random.Range(0, shelves[shelves.Count - 1].GetComponentsInChildren<Transform>().Length - 1);
+                    otherFood = Physics2D.OverlapCircleAll(shelves[shelves.Count - 1].GetComponentsInChildren<Transform>()[shelfIndex].transform.position, 0.25f);
+                }
+
+                // Get the transform of the shelf that the food is going to spawn on
+
+                Transform spawnTransform = shelves[shelves.Count - 1].GetComponentsInChildren<Transform>()[shelfIndex].transform;
+
+                // Spawn the food
 
                 food.Add(Instantiate(foodPrefab, spawnTransform.position, foodPrefab.transform.rotation));
             }

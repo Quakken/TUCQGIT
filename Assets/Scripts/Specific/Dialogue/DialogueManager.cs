@@ -39,9 +39,7 @@ public class DialogueManager : MonoBehaviour
     [Tooltip("All of the frames that make up the dialogue")]
     [SerializeField] DialogueFrame[] dialogueFrames;
 
-    int currentChar = 0; // The current character of the text that is being revealed
     bool revealingText; // Whether or not text is currently being revealed
-    bool textRevealed;
 
     [Header("Assets")]
     [Space]
@@ -57,6 +55,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] UnityEvent onTextDisplayed;
     [Tooltip("Called when the dialogue frame is advanced")]
     [SerializeField] UnityEvent onDialogueAdvance;
+    [Tooltip("Called when the final dialogue has been displayed")]
+    [SerializeField] UnityEvent onFinalTextDisplayed;
     [Tooltip("Called when the dialogue has been completed")]
     [SerializeField] UnityEvent onDialogueComplete;
 
@@ -76,12 +76,19 @@ public class DialogueManager : MonoBehaviour
             if (revealingText)
             {
                 // Stop revealing text
+
+                StopAllCoroutines();
                 revealingText = false;
+
+                if (currentFrame + 1 < dialogueFrames.Length)
+                    onTextDisplayed.Invoke();
+                else
+                    onFinalTextDisplayed.Invoke();
 
                 // Set the dialogue box text to the full thing
                 dialogueBox.text = dialogueFrames[currentFrame].text;
             }
-            if (textRevealed)
+            else
             {
                 // Advance frame
                 AdvanceFrame();
@@ -99,7 +106,6 @@ public class DialogueManager : MonoBehaviour
 
         // Clear dialogue box
         dialogueBox.text = "";
-        currentChar = 0;
 
         // Change & focus their portrait
         if (dialogueFrames[currentFrame].characterSide == PortraitSides.LEFT)
@@ -133,21 +139,19 @@ public class DialogueManager : MonoBehaviour
     // Displays text in the dialogue box one character at a time until the full dialogue has been displayed
     public IEnumerator RevealText(string textToDisplay)
     {
+        int currentChar = 0;
+
         // Repeats until the final character has been diplayed
-        while (currentChar < textToDisplay.Length && revealingText)
+        while (currentChar < textToDisplay.Length)
         {
             // Wait for the scroll speed
-            yield return new WaitForSeconds(scrollSpeed);
+            yield return new WaitForSecondsRealtime(scrollSpeed);
 
-            if (revealingText)
-            {
-                // Add the current character to the dialogue box text
-                dialogueBox.text += textToDisplay[currentChar];
-                currentChar++;
-            }
+            // Add the current character to the dialogue box text
+            dialogueBox.text += textToDisplay[currentChar];
+            currentChar++;
         }
 
-        textRevealed = true;
         revealingText = false;
         onTextDisplayed.Invoke();
     }
@@ -157,7 +161,7 @@ public class DialogueManager : MonoBehaviour
     // Advances the current dialogue frame
     public void AdvanceFrame()
     { 
-        if (currentFrame < dialogueFrames.Length)
+        if (currentFrame + 1 < dialogueFrames.Length)
         {
             currentFrame++;
             PlayDialogue(currentFrame);

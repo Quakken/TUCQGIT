@@ -32,6 +32,10 @@ public class DialogueManager : MonoBehaviour
     }
 
     [Header("Dialogue Options")]
+    [Tooltip("Should the dialogue pause the game when started?")]
+    [SerializeField] bool pauseOnStart = true;
+    [Tooltip("Should the dialogue be played when the scene is first loaded?")]
+    [SerializeField] bool playDialogueOnStart = true;
     [Tooltip("Delay between each letter of the dialogue being displayed.")]
     [SerializeField] float scrollSpeed = 0.1f;
     [Tooltip("The current dialogue frame")]
@@ -65,7 +69,8 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        PlayDialogue(currentFrame);
+        if (playDialogueOnStart)
+            PlayDialogue(currentFrame);
     }
 
     private void Update()
@@ -101,6 +106,10 @@ public class DialogueManager : MonoBehaviour
     // Plays out a specific dialogue frame
     public void PlayDialogue(int frame)
     {
+        // Pauses the game while the dialogue is shown
+        if (pauseOnStart)
+            TimeManager.instance.SetTimeScale(0);
+
         // Change speaker name
         charNameBox.text = dialogueFrames[currentFrame].characterName;
 

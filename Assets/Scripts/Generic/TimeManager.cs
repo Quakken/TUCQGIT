@@ -24,7 +24,7 @@ public class TimeManager : MonoBehaviour
 
     float timeScale;
 
-    private void Start()
+    private void Awake()
     {
         if (instance == null)
             instance = this;

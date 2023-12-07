@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 91453513}
   - component: {fileID: 91453512}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Invisible Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - component: {fileID: 339612245}
   - component: {fileID: 339612244}
   - component: {fileID: 339612246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Maze
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9031,7 +9031,7 @@ GameObject:
   m_Component:
   - component: {fileID: 879857980}
   - component: {fileID: 879857979}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: You Made It Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10307,7 +10307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1469255205}
   - component: {fileID: 1469255204}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Invisible Wall 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10653,7 +10653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1726793247}
   - component: {fileID: 1726793246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Invisible Wal 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11390,7 +11390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2039979174}
   - component: {fileID: 2039979173}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Maze Grid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

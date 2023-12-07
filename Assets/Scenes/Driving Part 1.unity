@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanes: 4
-  length: 500
+  length: 1000
   startDelay: 40
   carsToSpawn: 331
   xOffsetVariance: 33.1

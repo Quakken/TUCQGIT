@@ -272,13 +272,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanes: 4
-  length: 500
+  length: 1000
   startDelay: 40
   carsToSpawn: 500
   xOffsetVariance: 33.1
   minSceneryGap: 3.7
   maxSceneryGap: 45.2
-  paths: 3
+  paths: 2
   carPrefabs:
   - {fileID: 8259826513068461994, guid: be543f377d6c23247b12aa03eacd4d3c, type: 3}
   - {fileID: 7471303174905977664, guid: 99abf6f089ac2864db9f52391ca4a7ee, type: 3}

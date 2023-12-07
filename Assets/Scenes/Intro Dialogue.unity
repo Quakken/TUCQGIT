@@ -723,7 +723,7 @@ MonoBehaviour:
   - text: Ahaha, heya Butter!
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     characterSide: 0
   - text: ..!
     characterName: Butter
@@ -733,7 +733,7 @@ MonoBehaviour:
   - text: Woah, bro! I was just gonna invite you to my rad party, Haha..
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     characterSide: 0
   - text: ...
     characterName: Butter
@@ -743,7 +743,7 @@ MonoBehaviour:
   - text: It's at 9:00 PM tonight, dude! Be there or be square!
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     characterSide: 0
   - text: '*thinking* I have to bring something..'
     characterName: Butter
@@ -770,7 +770,7 @@ MonoBehaviour:
       and get off this side of the road..!
     characterName: Angry Pedestrian
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
-    voice: {fileID: 0}
+    voice: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
     characterSide: 0
   charNameBox: {fileID: 1288633582}
   dialogueBox: {fileID: 959740311}

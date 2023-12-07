@@ -310,38 +310,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197a431223dbfd14c95c8c9e58f2b2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.1
+  pauseOnStart: 1
+  playDialogueOnStart: 1
+  scrollSpeed: 0.05
   currentFrame: 0
   dialogueFrames:
   - text: Oh man, this is so cool rick really this is awesome
     characterName: Morty
     characterSprite: {fileID: 21300000, guid: 26c532ff2eb5129419128565652d7451, type: 3}
+    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     characterSide: 0
   - text: I know right morty we are in a game now morty
     characterName: Rick
     characterSprite: {fileID: 21300000, guid: 271405b2cb1a8a74ab240ec80849512b, type: 3}
+    voice: {fileID: 8300000, guid: e1f8689b5307ea14cba0c80c4ec46763, type: 3}
     characterSide: 1
   - text: I have never watched a single episode of rick and morty
     characterName: Rick
     characterSprite: {fileID: 21300000, guid: 21603daa6de65eb4cb83a055bf7f6055, type: 3}
+    voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
     characterSide: 0
   - text: And I think it shows right now
     characterName: Test character 1
     characterSprite: {fileID: 21300000, guid: 21603daa6de65eb4cb83a055bf7f6055, type: 3}
+    voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
     characterSide: 0
   - text: Oh that's alright rick it's fine rick don't worry about it this is so cool
       man
     characterName: Morty
     characterSprite: {fileID: 21300000, guid: 271405b2cb1a8a74ab240ec80849512b, type: 3}
+    voice: {fileID: 8300000, guid: e1f8689b5307ea14cba0c80c4ec46763, type: 3}
     characterSide: 1
   - text: Morty they turned me into a meat cyllinder what
     characterName: Meat Cyllinder Rick
     characterSprite: {fileID: 21300000, guid: 5f08dd115212ea54c91d53a7365be01d, type: 3}
+    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     characterSide: 0
   charNameBox: {fileID: 2079853436}
   dialogueBox: {fileID: 1180852239}
   charSpriteLeft: {fileID: 2074529377}
   charSpriteRight: {fileID: 1269504856}
+  source: {fileID: 163455219}
   onTextDisplayed:
     m_PersistentCalls:
       m_Calls:
@@ -415,6 +424,134 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeDuration: 0
+--- !u!1 &163455218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 163455220}
+  - component: {fileID: 163455219}
+  m_Layer: 0
+  m_Name: Audio Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &163455219
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163455218}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &163455220
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163455218}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295524226
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,7 +1077,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: b102ec553d77fc244807ea0b108cfaad, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1009,6 +1146,51 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1357339327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1382898282
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382898284}
+  - component: {fileID: 1382898283}
+  m_Layer: 0
+  m_Name: Time Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1382898283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382898282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32fa0ba1dcb66224382a74e7e06a97d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultTimeScale: 1
+--- !u!4 &1382898284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382898282}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1208,7 +1390,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e521d208315ad544395495216da32dbc, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -1360,3 +1542,5 @@ SceneRoots:
   - {fileID: 1061837103}
   - {fileID: 1402924898}
   - {fileID: 1357339330}
+  - {fileID: 163455220}
+  - {fileID: 1382898284}

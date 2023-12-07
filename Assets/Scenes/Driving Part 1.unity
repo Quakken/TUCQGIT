@@ -274,7 +274,7 @@ MonoBehaviour:
   lanes: 4
   length: 1000
   startDelay: 40
-  carsToSpawn: 500
+  carsToSpawn: 331
   xOffsetVariance: 33.1
   minSceneryGap: 3.7
   maxSceneryGap: 45.2

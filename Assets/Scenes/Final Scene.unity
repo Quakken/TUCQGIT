@@ -510,37 +510,44 @@ MonoBehaviour:
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 0
   - text: '!!!'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
     voice: {fileID: 0}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 1
   - text: Woah, man, you brought some refreshments, AHA!
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 0
   - text: ...
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 1
   - text: "Nah, maann, you didn\u2019t need to bring nothin\u2019. Alls we needed
       was the party animal!"
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 0
   - text: '*thinking* What "party animal"?'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 1
   - text: "Brooo. Bro, I\u2019m talking about you, dude. Come on inside, bro."
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
+    font: {fileID: 11400000, guid: 49a843c4d93ee5d489ecbab8327b0b2c, type: 2}
     characterSide: 0
   charNameBox: {fileID: 1395940722}
   dialogueBox: {fileID: 1930652048}

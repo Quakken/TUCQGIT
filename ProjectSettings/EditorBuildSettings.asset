@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Shopping Test.unity
     guid: 45785a9a92ee36c4e9201bbf35879077
   - enabled: 1
+    path: Assets/Scenes/Driving PT 2 Dialogue.unity
+    guid: 967e594a7e76a8a40b1951819c84da34
+  - enabled: 1
     path: Assets/Scenes/Driving Part 2.unity
     guid: 74e3d383e2d84384aae56fbd7a615446
   - enabled: 1

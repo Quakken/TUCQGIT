@@ -1902,21 +1902,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 702841834}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[0].text
+      value: '*thinking* I need to find..'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[1].text
+      value: '*thinking* Red grapes, Crackers, Salami, annddd..'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[2].text
+      value: '*thinking* and brie cheese, I can''t tell what that even looks like.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[3].text
+      value: ...
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[4].text
+      value: Butter they turned me into a meat cyllinder what
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: dialogueFrames.Array.data[0].voice
       value: 
-      objectReference: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: dialogueFrames.Array.data[1].voice
       value: 
-      objectReference: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: dialogueFrames.Array.data[2].voice
       value: 
-      objectReference: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: dialogueFrames.Array.data[3].voice
       value: 
-      objectReference: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: dialogueFrames.Array.data[4].voice
       value: 
@@ -1925,6 +1949,62 @@ PrefabInstance:
       propertyPath: dialogueFrames.Array.data[5].voice
       value: 
       objectReference: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[0].characterName
+      value: Butter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[0].characterSide
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[1].characterName
+      value: Butter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[1].characterSide
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[2].characterName
+      value: Butter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[3].characterName
+      value: Butter
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[3].characterSide
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[4].characterName
+      value: Toast
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[4].characterSide
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[0].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[1].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 26c532ff2eb5129419128565652d7451, type: 3}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[2].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ac59080149c661541a94ff6a6e54b372, type: 3}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[3].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 26c532ff2eb5129419128565652d7451, type: 3}
+    - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
+      propertyPath: dialogueFrames.Array.data[4].characterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5f08dd115212ea54c91d53a7365be01d, type: 3}
     - target: {fileID: 2332167188808294121, guid: 9658fd4ca33691149b5979d9a4081128, type: 3}
       propertyPath: onDialogueComplete.m_PersistentCalls.m_Calls.Array.size
       value: 3

@@ -8963,58 +8963,21 @@ MonoBehaviour:
   scrollSpeed: 0.1
   currentFrame: 0
   dialogueFrames:
-  - text: Ahaha, heya Butter!
-    characterName: Toast
-    characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
-    voice: {fileID: 0}
-    characterSide: 0
-  - text: ..!
+  - text: '*thinking* Why does Toast have a giant maze in the front of his house?'
     characterName: Butter
-    characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
+    characterSprite: {fileID: 21300000, guid: ac59080149c661541a94ff6a6e54b372, type: 3}
     voice: {fileID: 0}
     characterSide: 1
-  - text: Woah, bro! I was just gonna invite you to my rad party, Haha..
-    characterName: Toast
-    characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
+  - text: Ohhhh Haha! What a spectacular maze! I can't wait to explore!
+    characterName: Old Man
+    characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 0}
     characterSide: 0
-  - text: ...
+  - text: '*thinking* Guess I''ll find my way there.. Annoying.'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
     characterSide: 1
-  - text: It's at 9:00 PM tonight, dude! Be there or be square!
-    characterName: Toast
-    characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
-    voice: {fileID: 0}
-    characterSide: 0
-  - text: '*thinking* I have to bring something..'
-    characterName: Butter
-    characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
-    voice: {fileID: 0}
-    characterSide: 1
-  - text: '*thinking* Ohh.. I know.. A charcuterie board! It''ll leave a great impression.'
-    characterName: Butter
-    characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
-    voice: {fileID: 0}
-    characterSide: 1
-  - text: '*thinking* But, it''s rush hour..! I''ll have to find a faster way to
-      get there..'
-    characterName: Butter
-    characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
-    voice: {fileID: 0}
-    characterSide: 1
-  - text: '*thinking* I''ll have to drive to the ''Mile Long'', the local store.'
-    characterName: Butter
-    characterSprite: {fileID: 21300000, guid: 4ec26c58f9267334ba209717dc824857, type: 3}
-    voice: {fileID: 0}
-    characterSide: 1
-  - text: Hey! What do ya' think you're doin'!? You should be usin' A & D to drive,
-      and get off this side of the road..!
-    characterName: Angry Pedestrian
-    characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
-    voice: {fileID: 0}
-    characterSide: 0
   charNameBox: {fileID: 1777576718}
   dialogueBox: {fileID: 1503974897}
   charSpriteLeft: {fileID: 1448004297}

@@ -768,8 +768,8 @@ MonoBehaviour:
     characterSide: 1
   - text: Hey! What do ya' think you're doin'!? You should be usin' A & D to drive,
       and get off this side of the road..!
-    characterName: Angry Pedestrian
-    characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
+    characterName: Angry Driver
+    characterSprite: {fileID: 21300000, guid: c3a66ecf7204e974da39c84f1cdc97df, type: 3}
     voice: {fileID: 8300000, guid: d4e8402016878204b974e7351334e23c, type: 3}
     characterSide: 0
   charNameBox: {fileID: 1288633582}

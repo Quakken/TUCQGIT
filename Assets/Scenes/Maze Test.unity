@@ -9514,6 +9514,8 @@ GameObject:
   - component: {fileID: 879857979}
   - component: {fileID: 879857982}
   - component: {fileID: 879857981}
+  - component: {fileID: 879857983}
+  - component: {fileID: 879857984}
   m_Layer: 7
   m_Name: You Made It Wall
   m_TagString: Untagged
@@ -9598,17 +9600,29 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 879857983}
+        m_TargetAssemblyTypeName: EventAfterDelay, Assembly-CSharp
+        m_MethodName: CallEvent
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1040305370}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!50 &879857982
 Rigidbody2D:
@@ -9637,6 +9651,48 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &879857983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879857978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2186ab0105aba18419f88b5c02e411e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  startOnAwake: 0
+  timedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879857984}
+        m_TargetAssemblyTypeName: EventUtils, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Final Dialogue
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &879857984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879857978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563b0ba4f19800f40991b0e0c3591137, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shakeDuration: 0
 --- !u!1 &920109110
 GameObject:
   m_ObjectHideFlags: 0
@@ -10045,6 +10101,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7173bc13ea90fec479d37813c271de1e, type: 3}
+--- !u!1 &1040305370 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5217102723769107189, guid: 7173bc13ea90fec479d37813c271de1e, type: 3}
+  m_PrefabInstance: {fileID: 1040305369}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091520945
 GameObject:
   m_ObjectHideFlags: 0
@@ -11522,7 +11583,7 @@ GameObject:
   - component: {fileID: 1705989075}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

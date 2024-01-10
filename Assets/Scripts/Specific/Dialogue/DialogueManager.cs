@@ -29,6 +29,8 @@ public class DialogueManager : MonoBehaviour
         public Sprite characterSprite;
         [Tooltip("The voice to play when the character speaks")]
         public AudioClip voice;
+        [Tooltip("The font to use for the character's dialogue")]
+        public TMP_FontAsset font;
         [Tooltip("The side of the dialogue box that the character will be displayed on")]
         public PortraitSides characterSide;
     }
@@ -118,6 +120,9 @@ public class DialogueManager : MonoBehaviour
 
         // Change speaker name
         charNameBox.text = dialogueFrames[currentFrame].characterName;
+
+        // Change fonts
+        dialogueBox.font = dialogueFrames[currentFrame].font;
 
         // Clear dialogue box
         dialogueBox.text = "";

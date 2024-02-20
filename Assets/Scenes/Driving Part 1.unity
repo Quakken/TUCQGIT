@@ -677,8 +677,10 @@ MonoBehaviour:
   startDelay: 40
   carsToSpawn: 331
   xOffsetVariance: 33.1
-  minSceneryGap: 3.7
-  maxSceneryGap: 45.2
+  minSceneryGap: 2.7
+  maxSceneryGap: 6.9
+  rows: 3
+  rowGap: 3
   paths: 2
   carPrefabs:
   - {fileID: 8259826513068461994, guid: be543f377d6c23247b12aa03eacd4d3c, type: 3}
@@ -688,6 +690,12 @@ MonoBehaviour:
   scenery:
   - {fileID: 3361545598145824861, guid: b78edc905a7011c4b83ad7dd1c762b43, type: 3}
   - {fileID: 4287323733861231991, guid: cd847bf4e3d0f974b9d34ef4df561324, type: 3}
+  - {fileID: 2784321154042209975, guid: 2121d1a7956b48f4cb85505b0b942aca, type: 3}
+  - {fileID: 3165110975689181304, guid: e2afb237be69735478923b98e3ab73e7, type: 3}
+  sceneryfar:
+  - {fileID: 3165110975689181304, guid: e2afb237be69735478923b98e3ab73e7, type: 3}
+  farOffsetNear: 100
+  farOffsetFar: 150
   onCrash:
     m_PersistentCalls:
       m_Calls:

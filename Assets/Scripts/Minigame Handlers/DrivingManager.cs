@@ -6,6 +6,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -30,6 +32,10 @@ public class DrivingManager : MonoBehaviour
     [SerializeField][Range(0, 50)] float minSceneryGap;
     [Tooltip("How big the gap between scenery pieces CAN be")]
     [SerializeField][Range(0, 100)] float maxSceneryGap;
+    [Tooltip("How many rows to generate")]
+    [SerializeField] int rows;
+    [Tooltip("How much distance between rows")]
+    [SerializeField] float rowGap;
 
     [Space]
     [Tooltip("How many paths to spawn that will guarantee a way to the end of the level")]
@@ -40,6 +46,12 @@ public class DrivingManager : MonoBehaviour
     [SerializeField] GameObject roadPrefab;
     [Tooltip("Objects to spawn along the side of the road")]
     [SerializeField] GameObject[] scenery;
+    [Tooltip("Objects to spawn farther away")]
+    [SerializeField] GameObject[] sceneryfar;
+    [Tooltip("minimum offset of far objects")]
+    [SerializeField] float farOffsetNear;
+    [Tooltip("maximum offset of far objects")]
+    [SerializeField] float farOffsetFar;
 
     GameObject[,] roads;
     GameObject[,] cars;
@@ -204,51 +216,40 @@ public class DrivingManager : MonoBehaviour
 
         GameObject sceneryParent = new GameObject("Scenery Holder");
 
+
         float zOffset = 0;
-
         // Keep spawning scenery until it reaches the end of the road
-
-        while (zOffset < length * roadPrefab.transform.lossyScale.z)
+        for (int side = 0; side < 2; side++)
         {
-            // Choose a random object to spawn
+            for (int r = 0; r < rows; r++)
+            {
+                zOffset = 0;
+                while (zOffset < length * roadPrefab.transform.lossyScale.z)
+                {
+                    // Choose a random object to spawn
 
-            GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+                    GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+                    // Add a random amount to the spawn offset
 
-            // Add a random amount to the spawn offset
+                    zOffset += Random.Range(minSceneryGap, maxSceneryGap);
 
-            zOffset += Random.Range(minSceneryGap, maxSceneryGap);
+                    // Get the x offset
 
-            // Get the x offset
+                    float xOffset = Random.Range(-xOffsetVariance, 0);
 
-            float xOffset = Random.Range(-xOffsetVariance, 0);
-
-            // Spawn the scenery
-
-            Instantiate(toSpawn, new Vector3(xOffset - toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
+                    if (sceneryfar.Contains(toSpawn))
+                        xOffset -= Random.Range(farOffsetNear, farOffsetFar);
+                    // Spawn the scenery
+                    int scale = 1;
+                    if (side == 1)
+                        scale = -1;
+                    Instantiate(toSpawn, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x / 1.5f), 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
+                }
+            }
         }
 
         // Then do it for the other side of the road
 
-        zOffset = 0;
-
-        while (zOffset < length * roadPrefab.transform.lossyScale.z)
-        {
-            // Choose a random object to spawn
-
-            GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
-
-            // Add a random amount to the spawn offset
-
-            zOffset += Random.Range(minSceneryGap, maxSceneryGap);
-
-            // Get the x offset
-
-            float xOffset = Random.Range(0, xOffsetVariance);
-
-            // Spawn the scenery
-
-            Instantiate(toSpawn, new Vector3(xOffset + (lanes - 1.5f) * roadPrefab.transform.lossyScale.x + toSpawn.transform.localScale.x / 1.5f, 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
-        }
     }
 
     /*--------------------Utility Functions--------------------*/

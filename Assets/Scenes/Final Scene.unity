@@ -295,6 +295,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 751705974}
+  - {fileID: 1659915473}
+  - {fileID: 1706435809}
   - {fileID: 604496900}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -508,47 +510,47 @@ MonoBehaviour:
   dialogueFrames:
   - text: Oh, ho ho! You made it, dude!
     characterName: Toast
-    characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
+    characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
-    characterSide: 0
+    characterSide: 1
   - text: '!!!'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
     voice: {fileID: 0}
     font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
-    characterSide: 1
+    characterSide: 0
   - text: Woah, man, you brought some refreshments, AHA!
     characterName: Toast
-    characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
+    characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
-    characterSide: 0
+    characterSide: 1
   - text: ...
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
     font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
-    characterSide: 1
+    characterSide: 0
   - text: "Nah, maann, you didn\u2019t need to bring nothin\u2019. Alls we needed
       was the party animal!"
     characterName: Toast
-    characterSprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
+    characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
-    characterSide: 0
+    characterSide: 1
   - text: '*thinking* What "party animal"?'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
     font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
-    characterSide: 1
+    characterSide: 0
   - text: "Brooo. Bro, I\u2019m talking about you, dude. Come on inside, bro."
     characterName: Toast
-    characterSprite: {fileID: 21300000, guid: b96539ee05319fb4a969cbfb023630cf, type: 3}
+    characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
     voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
     font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
-    characterSide: 0
+    characterSide: 1
   charNameBox: {fileID: 1395940722}
   dialogueBox: {fileID: 1930652048}
   charSpriteLeft: {fileID: 1286646533}
@@ -614,6 +616,18 @@ MonoBehaviour:
           m_StringArgument: Main Menu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1706435812}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: SetTrigger
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: FadeOut
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &751705973
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,14 +678,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.071911715, g: 0.07332299, b: 0.1509434, a: 0.99215686}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.99215686}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0d2e9dd814162c74c89c9e5d1c8beb50, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1501,6 +1515,178 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1395940720}
   m_CullTransparentMesh: 1
+--- !u!1 &1659915472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659915473}
+  - component: {fileID: 1659915475}
+  - component: {fileID: 1659915474}
+  m_Layer: 5
+  m_Name: Toast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1659915473
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659915472}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 491758081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 117, y: 13}
+  m_SizeDelta: {x: -211.4913, y: -119.0211}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1659915474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659915472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.99215686}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1b4a137950849674bae76b3eab16c40f, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1659915475
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659915472}
+  m_CullTransparentMesh: 1
+--- !u!1 &1706435808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1706435809}
+  - component: {fileID: 1706435811}
+  - component: {fileID: 1706435810}
+  - component: {fileID: 1706435812}
+  m_Layer: 5
+  m_Name: Foreground
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1706435809
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706435808}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 491758081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1706435810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706435808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 1f8b3ea0047cb494ca6c50985c6db053, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1706435811
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706435808}
+  m_CullTransparentMesh: 1
+--- !u!95 &1706435812
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706435808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fb7d403bb97f3bd49af76c91391c1569, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1930652046
 GameObject:
   m_ObjectHideFlags: 0

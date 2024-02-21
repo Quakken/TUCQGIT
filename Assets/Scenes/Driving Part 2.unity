@@ -3240,54 +3240,82 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notifications:
   - name: Toast
-    contents: Hey bro so I've been wondering...
+    contents: Ahaha, Hey dude! Party's missing another member!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy1
-    reply: What's on your mind?
+    reply: omw
     afterReply: happy2
     afterIgnore: mad1
   - name: Toast
-    contents: What's your favorite color?
+    contents: 'When you showin'' up, bro? '
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy2
-    reply: ...
+    reply: soon!!!!! <3
     afterReply: happy3
     afterIgnore: mad1
   - name: Toast
-    contents: 'Buddy? '
+    contents: You comin' over party animal?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad1
-    reply: Sorry, I'm here now
+    reply: yes, sorry..
     afterReply: happy2
     afterIgnore: mad2
   - name: Old Man
-    contents: Oh hello my fellow cool kids
+    contents: Ahahhh~ Salutations my fellow cool kids!
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
-    ID: happy3
-    reply: How... how did you get our numbers?
-    afterReply: happy4
+    ID: happy5
+    reply: Hi.
+    afterReply: happy6
     afterIgnore: madOld
   - name: Toast
-    contents: Bro?
+    contents: I need everyone here, dude! Ahah, Come over now!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad2
-    reply: Sorry, am here now
+    reply: sorry omw
     afterReply: happy2
     afterIgnore: mad1
   - name: Old Man
     contents: Sonny? What's your favorite color?
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     ID: madOld
-    reply: Yeah I'm driving there right now
+    reply: stop texting me please
     afterReply: happy4
     afterIgnore: madOld
   - name: Old Man
-    contents: Are you on your way to the great show?
+    contents: Ohhhhh, how I can't wait to feel young again..!
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
-    ID: happy4
-    reply: Yeah I'm driving there right now
+    ID: happy6
+    reply: cool, how'd you get my number?
+    afterReply: happy7
+    afterIgnore: madOld
+  - name: Old Man
+    contents: Party, party, party! Ohhhooohoo~
+    icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
+    ID: happy7
+    reply: party!
     afterReply: happy1
     afterIgnore: madOld
+  - name: Toast
+    contents: Bro. Guess you're goin' onto the no invite list, Haha..
+    icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
+    ID: mad3
+    reply: Okay, sorry.. omw.
+    afterReply: happy1
+    afterIgnore: mad4
+  - name: Toast
+    contents: You better show up, man! The party needs all of you here.
+    icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
+    ID: happy4
+    reply: I'm really trying! Please!
+    afterReply: happy5
+    afterIgnore: mad4
+  - name: Toast
+    contents: Bro, what's gonna get you to show up? Haha.
+    icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
+    ID: mad4
+    reply: Give me a couple minutes.
+    afterReply: happy1
+    afterIgnore: mad1
   notiDuration: 7
   notiSpacing: 3
   butterTextColor: {r: 0.754717, g: 0.28835887, b: 0.28835887, a: 1}

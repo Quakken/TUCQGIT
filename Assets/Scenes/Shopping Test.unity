@@ -3490,6 +3490,9 @@ MonoBehaviour:
   shelfSpawnRate: 1
   minItemsPerShelf: 2
   maxItemsPerShelf: 8
+  minShopperDist: 0.51
+  maxShopperDist: 0
+  shopperSpawnChance: 0.441
   timer: {fileID: 2036562228}
   realImage: {fileID: 873486008}
   shelfPrefab: {fileID: 8966355216694965866, guid: 2286d3a55af3f534f985f59b89616dfa, type: 3}
@@ -3530,6 +3533,11 @@ MonoBehaviour:
     - {fileID: 3057922237947977839, guid: 783c711e51363df4eba238fbb8113a97, type: 3}
     - {fileID: 738554787030921306, guid: 46ff6e99ff58bc445bde490c8267e8a9, type: 3}
     - {fileID: 7921506962056223860, guid: 77cb37930915c4f4d836032e1685acee, type: 3}
+  shoppers:
+  - {fileID: 8121633074305339767, guid: 7f63c24d39ea9b54b9552de40a1ea39b, type: 3}
+  - {fileID: 8507572869353783498, guid: 04bc96b24ec093847bb53ed5e327348e, type: 3}
+  - {fileID: 3728394284356291979, guid: f078ba6e8eb307542bd2bc032d346540, type: 3}
+  - {fileID: 6911984818465472740, guid: 009b0d965e6b2634f87c7c6babaf5eff, type: 3}
   onStageComplete:
     m_PersistentCalls:
       m_Calls:

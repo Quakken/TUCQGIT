@@ -158,7 +158,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 4}
+  m_SizeDelta: {x: 0, y: 6.6467}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &93050086
 MonoBehaviour:
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Episode i: \n"
+  m_text: 'Episode i: '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
   m_sharedMaterial: {fileID: -8178844474820816176, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
@@ -749,7 +749,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 9
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -990,7 +990,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 4.4288}
+  m_SizeDelta: {x: 0, y: 5.0803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1090682567
 MonoBehaviour:
@@ -1012,7 +1012,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Phantom Merangue
+  m_text: "TH\\e pH\\a\\Nt^m \nm\\;n\\a\\g\\;r\\iE"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
   m_sharedMaterial: {fileID: -8178844474820816176, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
@@ -1039,8 +1039,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2
-  m_fontSizeBase: 2
+  m_fontSize: 2.35
+  m_fontSizeBase: 2.35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1053,7 +1053,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -58.31
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 0
   m_wordWrappingRatios: 0.4
@@ -1774,7 +1774,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: And viewers like you, thank you
+  m_text: and viewers like you, thanU you
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
   m_sharedMaterial: {fileID: -8178844474820816176, guid: 0656ae0156e95dc4dbf6907ca79fe9da, type: 2}
@@ -2011,7 +2011,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747739604}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: -33.10713}
+  m_LocalPosition: {x: 0, y: 0, z: -37.34977}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2030,7 +2030,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -35.581974}
+  m_AnchoredPosition: {x: 0, y: -39.824615}
   m_SizeDelta: {x: 0, y: 34.141}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747739608

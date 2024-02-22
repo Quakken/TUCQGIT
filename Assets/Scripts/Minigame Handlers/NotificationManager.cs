@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using TMPro;
 
@@ -62,6 +63,12 @@ public class NotificationManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI notiContents;
     [SerializeField] Image notiIcon;
 
+    [Header("Events")]
+    public UnityEvent OnPhoneUnsheathe;
+    public UnityEvent OnPhoneSheathe;
+    public UnityEvent OnMessageRecieve;
+    public UnityEvent OnMessageReply;
+
     private void Start()
     {
         currentNoti = notifications[0].ID;
@@ -77,6 +84,7 @@ public class NotificationManager : MonoBehaviour
         StopAllCoroutines();
 
         ShowPhone();
+        OnPhoneUnsheathe.Invoke();
     }
 
     // Called when the player clicks the send button on the phone
@@ -95,6 +103,9 @@ public class NotificationManager : MonoBehaviour
         CancelInvoke();
         StopAllCoroutines();
         StartCoroutine(ShowNotification(currentNoti, notiSpacing));
+
+        OnMessageReply.Invoke();
+        OnPhoneSheathe.Invoke();
     }
 
     // Shows a notification on screen
@@ -122,6 +133,8 @@ public class NotificationManager : MonoBehaviour
         CancelInvoke();
         StopAllCoroutines();
         Invoke("NotiIgnored", notiDuration);
+
+        OnMessageRecieve.Invoke();
     }
 
     // Called when a notification is ignored by the player

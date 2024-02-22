@@ -511,51 +511,51 @@ MonoBehaviour:
   - text: Oh, ho ho! You made it, dude!
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
-    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
-    font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
+    voice: {fileID: 0}
+    font: {fileID: 0}
     characterSide: 1
   - text: '!!!'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 0}
     characterSide: 0
   - text: Woah, man, you brought some refreshments, AHA!
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
-    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
-    font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
+    voice: {fileID: 0}
+    font: {fileID: 0}
     characterSide: 1
   - text: ...
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 0}
     characterSide: 0
   - text: "Nah, maann, you didn\u2019t need to bring nothin\u2019. Alls we needed
       was the party animal!"
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
-    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
-    font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
+    voice: {fileID: 0}
+    font: {fileID: 0}
     characterSide: 1
   - text: '*thinking* What "party animal"?'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 0}
     characterSide: 0
   - text: "Brooo. Bro, I\u2019m talking about you, dude. Come on inside, bro."
     characterName: Toast
     characterSprite: {fileID: 21300000, guid: b367635fbd4c44f47856a53efcfa452e, type: 3}
-    voice: {fileID: 8300000, guid: 786f8db6ae97a52429235a741df17c9e, type: 3}
-    font: {fileID: 11400000, guid: 841e0a6bbda97eb4cbb6b93d2d728618, type: 2}
+    voice: {fileID: 0}
+    font: {fileID: 0}
     characterSide: 1
   charNameBox: {fileID: 1395940722}
   dialogueBox: {fileID: 1930652048}
   charSpriteLeft: {fileID: 1286646533}
   charSpriteRight: {fileID: 1025420815}
-  source: {fileID: 942991985}
+  source: {fileID: 0}
   onTextDisplayed:
     m_PersistentCalls:
       m_Calls:
@@ -1440,8 +1440,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3f7fc392a0f227949b8fda9c93ea3a9c, type: 2}
-  m_sharedMaterial: {fileID: 560829298570087374, guid: 3f7fc392a0f227949b8fda9c93ea3a9c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

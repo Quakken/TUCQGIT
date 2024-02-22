@@ -3243,77 +3243,77 @@ MonoBehaviour:
     contents: Ahaha, Hey dude! Party's missing another member!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy1
-    reply: omw
+    reply: "\u250F( \u0361\xB0 \u035C\u0296 \u0361\xB0)\u251B"
     afterReply: happy2
     afterIgnore: mad1
   - name: Toast
     contents: 'When you showin'' up, bro? '
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy2
-    reply: soon!!!!! <3
+    reply: "(\u02C7\u2296\u02C7)"
     afterReply: happy3
     afterIgnore: mad1
   - name: Toast
     contents: You comin' over party animal?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad1
-    reply: yes, sorry..
+    reply: "(\u2565_\u2565)"
     afterReply: happy2
     afterIgnore: mad2
   - name: Old Man
     contents: Ahahhh~ Salutations my fellow cool kids!
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     ID: happy5
-    reply: Hi.
+    reply: "(\u2229_\u2229) "
     afterReply: happy6
     afterIgnore: madOld
   - name: Toast
     contents: I need everyone here, dude! Ahah, Come over now!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad2
-    reply: sorry omw
+    reply: :(
     afterReply: happy2
     afterIgnore: mad1
   - name: Old Man
     contents: Sonny? What's your favorite color?
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     ID: madOld
-    reply: stop texting me please
+    reply: "( \u0361\xBA \u25DE\u0644\u035F\u25DF \u0361\xBA)"
     afterReply: happy4
     afterIgnore: madOld
   - name: Old Man
     contents: Ohhhhh, how I can't wait to feel young again..!
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     ID: happy6
-    reply: cool, how'd you get my number?
+    reply: "( \u30FB\u25C7\u30FB)\uFF1F"
     afterReply: happy7
     afterIgnore: madOld
   - name: Old Man
     contents: Party, party, party! Ohhhooohoo~
     icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     ID: happy7
-    reply: party!
+    reply: "\u239D>\u203F<\u23A0"
     afterReply: happy1
     afterIgnore: madOld
   - name: Toast
     contents: Bro. Guess you're goin' onto the no invite list, Haha..
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad3
-    reply: Okay, sorry.. omw.
+    reply: "\xAF\\_(\u2299_\u0296\u2299)_/\xAF"
     afterReply: happy1
     afterIgnore: mad4
   - name: Toast
     contents: You better show up, man! The party needs all of you here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy4
-    reply: I'm really trying! Please!
+    reply: "( \u25D4 \u0296\u032F \u25D4 )"
     afterReply: happy5
     afterIgnore: mad4
   - name: Toast
     contents: Bro, what's gonna get you to show up? Haha.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad4
-    reply: Give me a couple minutes.
+    reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy1
     afterIgnore: mad1
   notiDuration: 7

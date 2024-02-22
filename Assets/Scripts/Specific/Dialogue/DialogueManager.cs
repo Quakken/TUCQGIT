@@ -27,6 +27,10 @@ public class DialogueManager : MonoBehaviour
         public string characterName;
         [Tooltip("The sprite that will be used to represent the character")]
         public Sprite characterSprite;
+        [Tooltip("The voice to play when the character speaks")]
+        public AudioClip voice;
+        [Tooltip("The font to use for the character's dialogue")]
+        public TMP_FontAsset font;
         [Tooltip("The side of the dialogue box that the character will be displayed on")]
         public PortraitSides characterSide;
     }
@@ -53,6 +57,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI dialogueBox;
     [SerializeField] Image charSpriteLeft;
     [SerializeField] Image charSpriteRight;
+    [SerializeField] AudioSource source;
 
     [Header("Events")]
     [Tooltip("Called when the text of a dialogue frame has been fully displayed")]
@@ -81,10 +86,13 @@ public class DialogueManager : MonoBehaviour
             if (revealingText)
             {
                 // Stop revealing text
-
                 StopAllCoroutines();
                 revealingText = false;
 
+                // Stop playing voices if they haven't already
+                source.Stop();
+
+                // Call some events
                 if (currentFrame + 1 < dialogueFrames.Length)
                     onTextDisplayed.Invoke();
                 else
@@ -112,6 +120,9 @@ public class DialogueManager : MonoBehaviour
 
         // Change speaker name
         charNameBox.text = dialogueFrames[currentFrame].characterName;
+
+        // Change fonts
+        dialogueBox.font = dialogueFrames[currentFrame].font;
 
         // Clear dialogue box
         dialogueBox.text = "";
@@ -143,6 +154,10 @@ public class DialogueManager : MonoBehaviour
         // Start revealing dialogue
         revealingText = true;
         StartCoroutine(RevealText(dialogueFrames[currentFrame].text));
+
+        // Play the voices
+        if (dialogueFrames[currentFrame].voice != null)
+            source.PlayOneShot(dialogueFrames[currentFrame].voice);
     }
 
     // Displays text in the dialogue box one character at a time until the full dialogue has been displayed
@@ -169,7 +184,7 @@ public class DialogueManager : MonoBehaviour
 
     // Advances the current dialogue frame
     public void AdvanceFrame()
-    { 
+    {
         if (currentFrame + 1 < dialogueFrames.Length)
         {
             currentFrame++;

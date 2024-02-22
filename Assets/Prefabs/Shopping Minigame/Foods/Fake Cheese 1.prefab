@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: bea4c144d178cf24585417cbe389c52e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 24.804634, y: 23}
@@ -145,6 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isFake: 1
+  onClick:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1475487895469251571
 MonoBehaviour:
   m_ObjectHideFlags: 0

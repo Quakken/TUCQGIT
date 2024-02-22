@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
 
 public class ShoppingManager : MonoBehaviour
 {
@@ -26,6 +27,12 @@ public class ShoppingManager : MonoBehaviour
     [SerializeField][Range(1, 8)] int minItemsPerShelf = 1;
     [Tooltip("The most amount of items a shelf can have")]
     [SerializeField][Range(1, 8)] int maxItemsPerShelf = 4;
+    [Tooltip("How far down from the bottom of the screen the shoppers can spawn")]
+    [SerializeField][Range(0, 5)] float minShopperDist = 0f;
+    [Tooltip("How far up from the bottom of the screen the shoppers can spawn")]
+    [SerializeField][Range(0, 5)] float maxShopperDist = 0f;
+    [Tooltip("How likely it is that a shopper will spawn when a shelf is spawned")]
+    [SerializeField][Range(0, 1)] float shopperSpawnChance = 0.5f;
     [Space]
     [SerializeField] TimerCountdown timer;
 
@@ -39,6 +46,8 @@ public class ShoppingManager : MonoBehaviour
     [SerializeField] GameObject shelfPrefab;
     [Tooltip("Contents of each stage. Each entry should have a different type of food")]
     [SerializeField] FoodType[] aisles;
+    [Tooltip("All of the shoppers that can spawn in front of butter. Should have 'MoveInDirection' scripts attached")]
+    [SerializeField] GameObject[] shoppers;
 
     private List<GameObject> shelves;
     private List<GameObject> food;
@@ -141,7 +150,7 @@ public class ShoppingManager : MonoBehaviour
             // Spawn the shelf
             shelves.Add(Instantiate(shelfPrefab, new Vector3(xOffset, 0, 0), shelfPrefab.transform.rotation));
 
-            /*// Spawn food on that shelf
+            /* Spawn food on that shelf
 
             int foodToSpawn = Random.Range(minItemsPerShelf, maxItemsPerShelf);
 
@@ -216,6 +225,21 @@ public class ShoppingManager : MonoBehaviour
                 // Spawn the food
 
                 food.Add(Instantiate(foodPrefab, spawnTransform.position, foodPrefab.transform.rotation));
+            }
+
+            // Possibly spawn a shopper
+
+            float spawnChance = Random.Range(0f, 1f);
+
+            if (spawnChance < shopperSpawnChance)
+            {
+                // Spawn a shopper at the same position as the current shelf
+
+                float yOffset = Random.Range(-minShopperDist, maxShopperDist);
+
+                Vector3 camBot = Camera.main.ScreenToWorldPoint(new Vector3(1, 1, 10));
+
+                Instantiate(shoppers[Random.Range(0, shoppers.Length)], new Vector3(xOffset, yOffset + camBot.y, 0), Quaternion.identity);
             }
         }
     }

@@ -555,7 +555,7 @@ MonoBehaviour:
   dialogueBox: {fileID: 1930652048}
   charSpriteLeft: {fileID: 1286646533}
   charSpriteRight: {fileID: 1025420815}
-  source: {fileID: 0}
+  source: {fileID: 942991985}
   onTextDisplayed:
     m_PersistentCalls:
       m_Calls:

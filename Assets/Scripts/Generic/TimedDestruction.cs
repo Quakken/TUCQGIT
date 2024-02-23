@@ -33,8 +33,13 @@ public class TimedDestruction : MonoBehaviour
 
         if (destroyTimer <= 0)
         {
-            onDestroy.Invoke(); 
-            Destroy(gameObject, destroyDelay);
+            Destroy();
         }
+    }
+
+    public void Destroy()
+    {
+        onDestroy.Invoke();
+        Destroy(gameObject, destroyDelay);
     }
 }

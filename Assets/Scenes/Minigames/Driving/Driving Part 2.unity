@@ -5495,7 +5495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bdf97ea3dad6bc44a81528688f6e671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsRemaining: 30
+  secondsRemaining: 45
   timerStarts: 1
   timeText: {fileID: 1571351243}
   OnTimerFinish:
@@ -6594,7 +6594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lanes: 8
-  length: 500
+  length: 700
   startDelay: 40
   carsToSpawn: 444
   xOffsetVariance: 33.1

@@ -33,7 +33,7 @@ public class Collectible : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.score += points;
+            //GameManager.score += points;
             AudioSource PAud = collision.gameObject.GetComponent<AudioSource>();
             if (PAud != null)
             {

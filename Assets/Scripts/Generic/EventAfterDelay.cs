@@ -20,6 +20,12 @@ public class EventAfterDelay : MonoBehaviour
     [Header("Events")]
     [SerializeField] UnityEvent timedEvent;
 
+    private void Awake()
+    {
+        if (startOnAwake)
+            CallEvent();
+    }
+
     public void CallEvent()
     {
         Invoke("InvokeEvent", delay);

@@ -1,5 +1,5 @@
 /*
- * Name: Quinn Farrell
+ * Name: Quinn Farrell, Jack Zhao
  * Date: 11/27/2023
  * Desc: A manager class for the driving minigame. Handles things like player movement, car spawning, road spawning, as well as game over and win conditions.
 */
@@ -16,6 +16,8 @@ public class DrivingManager : MonoBehaviour
     [Header("Road Config")]
     [Tooltip("How many lanes the level generates")]
     [SerializeField][Range(2, 10)] int lanes = 2;
+    [Tooltip("How many lanes of rainslicked concreet the level generates")]
+    [SerializeField] int floor = 10;
     [Tooltip("How many 'rows' of roads to spawn. Pretty much how long the level should be")]
     [SerializeField] int length = 50;
 
@@ -33,9 +35,9 @@ public class DrivingManager : MonoBehaviour
     [Tooltip("How big the gap between scenery pieces CAN be")]
     [SerializeField][Range(0, 100)] float maxSceneryGap;
     [Tooltip("How many rows to generate")]
-    [SerializeField] int rows;
+    [SerializeField] int rows = 3;
     [Tooltip("How much distance between rows")]
-    [SerializeField] float rowGap;
+    [SerializeField] float rowGap = 3;
 
     [Space]
     [Tooltip("How many paths to spawn that will guarantee a way to the end of the level")]
@@ -44,14 +46,15 @@ public class DrivingManager : MonoBehaviour
     [Header("Assets")]
     [SerializeField] GameObject[] carPrefabs;
     [SerializeField] GameObject roadPrefab;
+    [SerializeField] GameObject floorPrefab;
     [Tooltip("Objects to spawn along the side of the road")]
     [SerializeField] GameObject[] scenery;
     [Tooltip("Objects to spawn farther away")]
     [SerializeField] GameObject[] sceneryfar;
     [Tooltip("minimum offset of far objects")]
-    [SerializeField] float farOffsetNear;
+    [SerializeField] float farOffsetNear = 30;
     [Tooltip("maximum offset of far objects")]
-    [SerializeField] float farOffsetFar;
+    [SerializeField] float farOffsetFar = 150;
 
     GameObject[,] roads;
     GameObject[,] cars;
@@ -95,7 +98,12 @@ public class DrivingManager : MonoBehaviour
                 roads[y, x] = instance;
             }
         }
-
+        float buildLocation = 0;
+        while (buildLocation < length * roadPrefab.transform.lossyScale.x)
+        {
+            Instantiate(floorPrefab, new Vector3(0, 0, buildLocation), floorPrefab.transform.rotation, floorPrefab.transform);
+            buildLocation += floorPrefab.transform.lossyScale.z;
+        }
         // Spawn the cars
 
         GameObject carParent = new GameObject("Car Holder");
@@ -229,6 +237,7 @@ public class DrivingManager : MonoBehaviour
                     // Choose a random object to spawn
 
                     GameObject toSpawn = scenery[Random.Range(0, scenery.Length)];
+
                     // Add a random amount to the spawn offset
 
                     zOffset += Random.Range(minSceneryGap, maxSceneryGap);
@@ -243,7 +252,18 @@ public class DrivingManager : MonoBehaviour
                     int scale = 1;
                     if (side == 1)
                         scale = -1;
-                    Instantiate(toSpawn, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x / 1.5f), 0, zOffset), toSpawn.transform.rotation, sceneryParent.transform);
+                    GameObject spawned = Instantiate(toSpawn, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x  -(lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 
+                        toSpawn.transform.rotation, sceneryParent.transform); // spawns the scene object
+                    
+                    if (Random.Range(1, 2) == 1) // coin flipper
+                        spawned.transform.Rotate(0,180,0);
+
+                    GameObject mirrored = Instantiate(spawned, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x - (lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 
+                        spawned.transform.rotation, sceneryParent.transform); // spawns mirror version of object;
+                    mirrored.transform.Rotate(180, 0, 0);
+                    mirrored.GetComponent<SpriteRenderer>().sortingOrder -= 4;
+                    
+                    
                 }
             }
         }

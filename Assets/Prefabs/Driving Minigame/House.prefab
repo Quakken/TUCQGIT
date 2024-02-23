@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3054661189808792411}
   - component: {fileID: 1628563887035761226}
   - component: {fileID: 2045036070388934282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: House
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3361545598145824861}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.00012283209, z: 0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 16, y: 16, z: 2.2857146}
   m_ConstrainProportionsScale: 1

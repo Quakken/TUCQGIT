@@ -7,6 +7,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class AdManager : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class AdManager : MonoBehaviour
     [SerializeField][Min(0)] private float maxSpawnDelay;
     [Tooltip("How far from the center of each ad position an ad can spawn. Increase for more variation")]
     [SerializeField][Range(0, 50)] private float adSpawnVariation = 25f;
+
+    [Header("Assets")]
+    [Tooltip("All of the ads to spawn")]
+    [SerializeField] private GameObject[] ads;
 
     // Timer that counts down the time between ad spanws
     private float spawnTimer;
@@ -50,14 +55,30 @@ public class AdManager : MonoBehaviour
 
     private void SpawnAd()
     {
-        // Choose a random spawn position
         RectTransform[] positions = adHolder.GetComponentsInChildren<RectTransform>();
-        // Keep searching for a valid spawn pos until all positions have been looped through
         RectTransform spawnPosition = null;
-        for (int i = 0; i < positions.Length - 1; i++)
+
+        // Choose a random spawn position
+        int pos = Random.Range(0, adHolder.transform.childCount);
+        print(pos);
+        
+        // Keep searching for a valid spawn pos until all positions have been looped through
+        for (int i = 0; i < adHolder.transform.childCount; i++)
         {
-            spawnPosition = positions[Random.Range(1, positions.Length - 1)];
+            // See if the current position is already occupied
+            if (!Physics2D.OverlapCircle(positions[pos].position, 25))
+            {
+                // If it's not, set the spawn position to that one
+                spawnPosition = positions[pos];
+                break;
+            }
+            // Otherwise, incriment the current position by 1
+            pos = (pos < adHolder.transform.childCount) ? pos + 1 : 0;
         }
+
+        // If no valid spawn position was found, then give up.
+        if (spawnPosition == null)
+            return;
 
         // Choose a random ad
         GameObject toSpawn = ads[Random.Range(0, ads.Length)];
@@ -65,13 +86,9 @@ public class AdManager : MonoBehaviour
         // Choose a random offset
         Vector3 offset = Random.insideUnitCircle * adSpawnVariation;
 
-        // Spawn the ad with the ad holder's canvas as a parent
+        // Spawn the ad with the ad spawn position as a parent
         GameObject instance = Instantiate(toSpawn, adHolder.GetComponentInParent<Canvas>().transform);
         // Position the ad
-        instance.GetComponent<RectTransform>().position = spawnPosition.position + offset;
+        instance.transform.position = spawnPosition.transform.position + offset;
     }
-
-    [Header("Assets")]
-    [Tooltip("All of the ads to spawn")]
-    [SerializeField] private GameObject[] ads;
 }

@@ -32,6 +32,8 @@ public class NotificationManager : MonoBehaviour
         public string afterReply;
         [Tooltip("The ID of the notification to send after the player fails to reply")]
         public string afterIgnore;
+        [Tooltip("Whether or not the game ENDS when the player does not reply")]
+        public bool loseOnIgnore;
     }
 
     [Header("Notification Database")]
@@ -73,6 +75,18 @@ public class NotificationManager : MonoBehaviour
     {
         currentNoti = notifications[0].ID;
         StartCoroutine(ShowNotification(currentNoti));
+    }
+
+    private void Update()
+    {
+        // See if the player presses the spacebar and a notification is currently being displayed
+        if (Input.GetButtonDown("Phone"))
+        {
+            if (notiAnim.GetBool("Showing"))
+                OnNotiClicked();
+            else if (phoneAnim.GetBool("Showing"))
+                OnPhoneClicked();
+        }
     }
 
     // Called when a notification is clicked
@@ -140,6 +154,13 @@ public class NotificationManager : MonoBehaviour
     // Called when a notification is ignored by the player
     private void NotiIgnored()
     {
+        // If the game should end here, then end it
+        if (GetNotification(currentNoti).loseOnIgnore)
+        {
+            // Disable player & do the ignorement
+            FindObjectOfType<DrivingManager>().OnPlayerIgnore();
+        }
+
         // Set the current notification to the next ignored notification
         currentNoti = GetNotification(currentNoti).afterIgnore;
 

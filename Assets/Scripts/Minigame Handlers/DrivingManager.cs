@@ -62,6 +62,7 @@ public class DrivingManager : MonoBehaviour
     [Header("Events")]
     [SerializeField] UnityEvent onCrash;
     [SerializeField] UnityEvent onWin;
+    [SerializeField] UnityEvent onIgnore;
 
     /*--------------------Unity Functions--------------------*/
 
@@ -287,5 +288,11 @@ public class DrivingManager : MonoBehaviour
     public void OnPlayerWin()
     {
         onWin.Invoke();
+    }
+
+    // Called when the player ignores too many messages
+    public void OnPlayerIgnore()
+    {
+        onIgnore.Invoke();
     }
 }

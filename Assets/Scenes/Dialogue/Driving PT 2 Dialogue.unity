@@ -631,7 +631,7 @@ MonoBehaviour:
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   - text: ..!
     characterName: Butter
@@ -649,7 +649,7 @@ MonoBehaviour:
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   - text: ..! *thinking* He meant Toasts party!
     characterName: Butter
@@ -661,7 +661,7 @@ MonoBehaviour:
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   charNameBox: {fileID: 1493725854}
   dialogueBox: {fileID: 1359014552}

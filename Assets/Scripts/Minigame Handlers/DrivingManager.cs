@@ -258,12 +258,10 @@ public class DrivingManager : MonoBehaviour
                     if (Random.Range(1, 2) == 1) // coin flipper
                         spawned.transform.Rotate(0,180,0);
 
-                    GameObject mirrored = Instantiate(spawned, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x - (lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 
+                    /*GameObject mirrored = Instantiate(spawned, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x - (lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 
                         spawned.transform.rotation, sceneryParent.transform); // spawns mirror version of object;
                     mirrored.transform.Rotate(180, 0, 0);
-                    mirrored.GetComponent<SpriteRenderer>().sortingOrder -= 4;
-                    
-                    
+                    mirrored.GetComponent<SpriteRenderer>().sortingOrder -= 4;*/
                 }
             }
         }

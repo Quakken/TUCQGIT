@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 152070062}
   - component: {fileID: 152070063}
   - component: {fileID: 152070065}
+  - component: {fileID: 152070066}
   m_Layer: 0
   m_Name: Collectable 3
   m_TagString: Untagged
@@ -320,6 +321,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &152070066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 152070061}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &173433683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8572,6 +8586,7 @@ GameObject:
   - component: {fileID: 482885288}
   - component: {fileID: 482885289}
   - component: {fileID: 482885291}
+  - component: {fileID: 482885292}
   m_Layer: 0
   m_Name: Collectable 7
   m_TagString: Untagged
@@ -8681,6 +8696,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &482885292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482885287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &489664298
 GameObject:
   m_ObjectHideFlags: 0
@@ -9259,6 +9287,7 @@ GameObject:
   - component: {fileID: 836528109}
   - component: {fileID: 836528110}
   - component: {fileID: 836528112}
+  - component: {fileID: 836528113}
   m_Layer: 0
   m_Name: Collectable 9
   m_TagString: Untagged
@@ -9368,6 +9397,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &836528113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836528108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &847279076
 GameObject:
   m_ObjectHideFlags: 0
@@ -10008,6 +10050,7 @@ GameObject:
   - component: {fileID: 1027091296}
   - component: {fileID: 1027091297}
   - component: {fileID: 1027091299}
+  - component: {fileID: 1027091300}
   m_Layer: 0
   m_Name: Collectable 6
   m_TagString: Untagged
@@ -10117,6 +10160,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &1027091300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027091295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1001 &1040305369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10230,6 +10286,7 @@ GameObject:
   - component: {fileID: 1091520946}
   - component: {fileID: 1091520947}
   - component: {fileID: 1091520949}
+  - component: {fileID: 1091520950}
   m_Layer: 0
   m_Name: Collectable 8
   m_TagString: Untagged
@@ -10339,6 +10396,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &1091520950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091520945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1094636021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10453,6 +10523,7 @@ GameObject:
   - component: {fileID: 1122789303}
   - component: {fileID: 1122789304}
   - component: {fileID: 1122789306}
+  - component: {fileID: 1122789307}
   m_Layer: 0
   m_Name: Collectable 10
   m_TagString: Untagged
@@ -10562,6 +10633,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &1122789307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122789302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1220517619
 GameObject:
   m_ObjectHideFlags: 0
@@ -10910,6 +10994,7 @@ GameObject:
   - component: {fileID: 1414920850}
   - component: {fileID: 1414920853}
   - component: {fileID: 1414920854}
+  - component: {fileID: 1414920855}
   m_Layer: 0
   m_Name: Collectable 1
   m_TagString: Untagged
@@ -11046,6 +11131,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1414920855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1414920849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1425032850
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,6 +11155,7 @@ GameObject:
   - component: {fileID: 1425032851}
   - component: {fileID: 1425032852}
   - component: {fileID: 1425032854}
+  - component: {fileID: 1425032855}
   m_Layer: 0
   m_Name: Collectable 4
   m_TagString: Untagged
@@ -11166,6 +11265,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 9
+--- !u!114 &1425032855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425032850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1433221254
 GameObject:
   m_ObjectHideFlags: 0
@@ -12685,6 +12797,7 @@ GameObject:
   - component: {fileID: 1871304724}
   - component: {fileID: 1871304725}
   - component: {fileID: 1871304727}
+  - component: {fileID: 1871304728}
   m_Layer: 0
   m_Name: Collectable 5
   m_TagString: Untagged
@@ -12794,6 +12907,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &1871304728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1871304723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1001 &1911622161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12906,6 +13032,7 @@ GameObject:
   - component: {fileID: 1963906820}
   - component: {fileID: 1963906821}
   - component: {fileID: 1963906823}
+  - component: {fileID: 1963906824}
   m_Layer: 0
   m_Name: Collectable 2
   m_TagString: Untagged
@@ -13015,6 +13142,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 8
+--- !u!114 &1963906824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963906819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1974431080
 GameObject:
   m_ObjectHideFlags: 0

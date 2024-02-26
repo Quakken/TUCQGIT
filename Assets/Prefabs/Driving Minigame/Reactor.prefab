@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 8224560741796474246}
   - component: {fileID: 2399927774416795948}
   - component: {fileID: -6946941094678275791}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Reactor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2784321154042209975}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.00012248238, z: 0, w: -1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 32, y: 32, z: 1}
   m_ConstrainProportionsScale: 0
@@ -204,5 +204,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.2836914, y: 0.6393385, z: 0.2}
+  m_Size: {x: 1.2836914, y: 0.6393385, z: 2.86}
   m_Center: {x: 0, y: 0.31966925, z: 0}

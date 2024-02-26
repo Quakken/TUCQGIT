@@ -28,11 +28,12 @@ public class EventAfterDelay : MonoBehaviour
 
     public void CallEvent()
     {
-        Invoke("InvokeEvent", delay);
+        StartCoroutine(InvokeEvent());
     }
 
-    void InvokeEvent()
+    IEnumerator InvokeEvent()
     {
+        yield return new WaitForSeconds(delay);
         timedEvent.Invoke();
     }
 }

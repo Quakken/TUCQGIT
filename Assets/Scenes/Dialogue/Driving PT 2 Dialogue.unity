@@ -619,49 +619,49 @@ MonoBehaviour:
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
     characterSide: 1
   - text: '*thinking* Oh well, white cheddar goes well with these ingredients..'
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
     characterSide: 1
   - text: Ahaa, are you also going to the magnificent show?
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   - text: ..!
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 34749ae0792615947a24414fdc41d01f, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
     characterSide: 1
   - text: ..?
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 69af96104a0d3974fa7a3af8cd0b15cb, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
     characterSide: 1
   - text: 'The glorious party! Aha, it''s like a lolly for my eyes! '
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   - text: ..! *thinking* He meant Toasts party!
     characterName: Butter
     characterSprite: {fileID: 21300000, guid: 699db0ebdb802654fbd429c566e7562f, type: 3}
     voice: {fileID: 0}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 93850bdec5f18384c843da379fd846c0, type: 2}
     characterSide: 1
   - text: See you at the party~ Hahaha!
     characterName: Old Man
     characterSprite: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
     voice: {fileID: 8300000, guid: d7b3da53812f7f74ebd075eab582b58b, type: 3}
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: 12f4a0c619dfb994c8a1230fdcbc2b8f, type: 2}
     characterSide: 0
   - text: '*thinking* Oh no. It''s 7 PM. I''m going to be getting so many ads on
       my phone..'
@@ -784,7 +784,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Driving Part 1
+          m_StringArgument: Driving Part 2
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1001 &1329822837

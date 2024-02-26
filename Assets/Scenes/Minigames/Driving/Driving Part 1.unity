@@ -1103,23 +1103,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notifications:
   - name: Toast
-    contents: Hey dude, are you coming to the party today?
+    contents: You better show up soon!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy1
-    reply: "(\uFE36\uFE39\uFE3A)"
+    reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy2
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: Are you just getting ready?
+    contents: Heading over yet?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy2
-    reply: "\xAF\\_(\u30C4)_/\xAF"
+    reply: "(\u0361o\u203FO\u0361)"
     afterReply: happy3
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: Dude? You gonna respond or keep ghosting me?
+    contents: Do you respond.. or...?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad1
     reply: "( \u0361 \xB0 \u0296\u032F \u0361\xB0)"
@@ -1127,23 +1127,24 @@ MonoBehaviour:
     afterIgnore: mad2
     loseOnIgnore: 0
   - name: Toast
-    contents: You better show up, man.
+    contents: Do you know that you don't need to bring anything. We all just need
+      you here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy3
-    reply: "(\u0361o\u203FO\u0361)"
+    reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy4
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: Bro? You're not being cool.
+    contents: Bro? You're not cool.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad2
-    reply: "\u250C( \u0CA0_\u0CA0)\u2518"
+    reply: "(\uFE36\uFE39\uFE3A)"
     afterReply: happy2
     afterIgnore: mad1
     loseOnIgnore: 1
   - name: Toast
-    contents: My man, where you at?
+    contents: My man, you're awesome. Can't for everyone to be here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy4
     reply: "( \u0361\u25C9\u25DE \u035C\u0296\u25DF \u0361\u25C9)"

@@ -98,12 +98,16 @@ public class DrivingManager : MonoBehaviour
                 roads[y, x] = instance;
             }
         }
+
+        // Add floor
+
         float buildLocation = 0;
         while (buildLocation < length * roadPrefab.transform.lossyScale.x)
         {
-            Instantiate(floorPrefab, new Vector3(0, 0, buildLocation), floorPrefab.transform.rotation, floorPrefab.transform);
+            Instantiate(floorPrefab, new Vector3(0, 0, buildLocation), floorPrefab.transform.rotation);
             buildLocation += floorPrefab.transform.lossyScale.z;
         }
+
         // Spawn the cars
 
         GameObject carParent = new GameObject("Car Holder");
@@ -255,7 +259,7 @@ public class DrivingManager : MonoBehaviour
                     GameObject spawned = Instantiate(toSpawn, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x  -(lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 
                         toSpawn.transform.rotation, sceneryParent.transform); // spawns the scene object
                     
-                    if (Random.Range(1, 2) == 1) // coin flipper
+                    if (Random.Range(0, 2) == 1) // coin flipper
                         spawned.transform.Rotate(0,180,0);
 
                     /*GameObject mirrored = Instantiate(spawned, new Vector3(scale * (xOffset - (r * rowGap) - toSpawn.transform.localScale.x - (lanes * roadPrefab.transform.lossyScale.x / 2)) + (lanes * roadPrefab.transform.lossyScale.x / 2), 0, zOffset), 

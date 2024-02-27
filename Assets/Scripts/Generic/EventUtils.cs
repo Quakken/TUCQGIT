@@ -27,6 +27,11 @@ public class EventUtils : MonoBehaviour
         SceneLoader.LoadScene(toLoad);
     }
 
+    public void UpdateQuitState(bool newState)
+    {
+        TrapUser.UpdateQuitState(newState);
+    }
+
     public void Quit()
     {
         Application.Quit();

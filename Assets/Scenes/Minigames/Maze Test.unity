@@ -333,7 +333,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &173433683
 GameObject:
   m_ObjectHideFlags: 0
@@ -8708,7 +8707,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &489664298
 GameObject:
   m_ObjectHideFlags: 0
@@ -8993,6 +8991,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2186ab0105aba18419f88b5c02e411e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  delay: 0
+  startOnAwake: 0
+  timedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &700085840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9005,6 +9008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563b0ba4f19800f40991b0e0c3591137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shakeDuration: 0
 --- !u!114 &700085841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9017,6 +9021,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 197a431223dbfd14c95c8c9e58f2b2cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseOnStart: 1
+  playDialogueOnStart: 1
+  scrollSpeed: 0.1
+  currentFrame: 0
+  dialogueFrames: []
+  charNameBox: {fileID: 0}
+  dialogueBox: {fileID: 0}
+  charSpriteLeft: {fileID: 0}
+  charSpriteRight: {fileID: 0}
+  source: {fileID: 0}
+  onTextDisplayed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueAdvance:
+    m_PersistentCalls:
+      m_Calls: []
+  onFinalTextDisplayed:
+    m_PersistentCalls:
+      m_Calls: []
+  onDialogueComplete:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &792034506
 GameObject:
   m_ObjectHideFlags: 0
@@ -9320,7 +9346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &847279076
 GameObject:
   m_ObjectHideFlags: 0
@@ -9521,6 +9546,8 @@ GameObject:
   - component: {fileID: 879857981}
   - component: {fileID: 879857983}
   - component: {fileID: 879857984}
+  - component: {fileID: 879857985}
+  - component: {fileID: 879857986}
   m_Layer: 7
   m_Name: You Made It Wall
   m_TagString: Untagged
@@ -9605,9 +9632,9 @@ MonoBehaviour:
   OnCollision:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 879857983}
-        m_TargetAssemblyTypeName: EventAfterDelay, Assembly-CSharp
-        m_MethodName: CallEvent
+      - m_Target: {fileID: 879857985}
+        m_TargetAssemblyTypeName: MazeManager, Assembly-CSharp
+        m_MethodName: OnLevelComplete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9698,6 +9725,77 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shakeDuration: 0
+--- !u!114 &879857985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879857978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5778ae11a069e964daecf65d472d12fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnBromance:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879857986}
+        m_TargetAssemblyTypeName: EventAfterDelay, Assembly-CSharp
+        m_MethodName: CallEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnNormal:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879857983}
+        m_TargetAssemblyTypeName: EventAfterDelay, Assembly-CSharp
+        m_MethodName: CallEvent
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &879857986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879857978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2186ab0105aba18419f88b5c02e411e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 1
+  startOnAwake: 0
+  timedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879857984}
+        m_TargetAssemblyTypeName: EventUtils, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Bromance Ending
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &900289698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,7 +10215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1001 &1040305369
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10353,7 +10450,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1094636021
 GameObject:
   m_ObjectHideFlags: 0
@@ -10372,7 +10468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1094636022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10590,7 +10686,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1217295330
 GameObject:
   m_ObjectHideFlags: 0
@@ -11120,7 +11215,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1425032850
 GameObject:
   m_ObjectHideFlags: 0
@@ -11254,7 +11348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1433221254
 GameObject:
   m_ObjectHideFlags: 0
@@ -13025,7 +13118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1001 &1911622161
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13260,7 +13352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8b0737c053a2404791eef2305c98ad8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnOnPickUp: {fileID: 0}
 --- !u!1 &1974431080
 GameObject:
   m_ObjectHideFlags: 0

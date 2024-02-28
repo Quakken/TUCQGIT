@@ -9,22 +9,18 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public static bool allflowersCollected { get; private set; }
-
-    private int targetFlowers = 10;
-
-    private int flowersCollected;
+    private static int flowersCollected;
 
     public void OnFlowerCollected()
     {
         flowersCollected += 1;
         if (flowersCollected == 10)
         {
-            allflowersCollected = true;
+            MazeManager.secretEnding = true;
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

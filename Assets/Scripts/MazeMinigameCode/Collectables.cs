@@ -7,12 +7,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
 public class Collectible : MonoBehaviour
 {
-    public static OnFlowerCollected
+    public static bool allflowersCollected {  get; private set; }
 
-    Start()
+    private int targetFlowers = 10;
+
+    private int flowersCollected;
+
+    public static void OnFlowerCollected() 
+    {
+        flowersCollected += 1;
+        if (flowersCollected == 10)
+        {
+            allflowersCollected = true;
+        }
+    }
+
+    void Start()
     {
         _charController = GetComponent<PlayerMovement>();
 
@@ -20,8 +32,6 @@ public class Collectible : MonoBehaviour
         {
             Debug.LogError("Player movement is NULL");
         }
-
-        Collectible.OnFlowerCollected += FlowerCollected;
     }
 
 
@@ -29,15 +39,6 @@ public class Collectible : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (!(OnFlowerCollected is null))
-            {
-                OnFlowerCollected();
-            }
+            OnFlowerCollected();
         }
     }
-    void OnDestroy()
-    {
-        Collectible.OnFlowerCollected -= FlowerCollected;
-    }
-}
-*/

@@ -15,7 +15,7 @@ public class Collectible : MonoBehaviour
 
     private int flowersCollected;
 
-    public static void OnFlowerCollected()
+    public void OnFlowerCollected()
     {
         flowersCollected += 1;
         if (flowersCollected == 10)
@@ -23,17 +23,6 @@ public class Collectible : MonoBehaviour
             allflowersCollected = true;
         }
     }
-
-    void Start()
-    {
-        _charController = GetComponent<PlayerMovement>();
-
-        if (_charController is null)
-        {
-            Debug.LogError("Player movement is NULL");
-        }
-    }
-
 
     void OnTriggerEnter(Collider other)
     {

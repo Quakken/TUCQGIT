@@ -9,13 +9,13 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    public static bool allflowersCollected {  get; private set; }
+    public static bool allflowersCollected { get; private set; }
 
     private int targetFlowers = 10;
 
     private int flowersCollected;
 
-    public static void OnFlowerCollected() 
+    public static void OnFlowerCollected()
     {
         flowersCollected += 1;
         if (flowersCollected == 10)
@@ -42,3 +42,4 @@ public class Collectible : MonoBehaviour
             OnFlowerCollected();
         }
     }
+}

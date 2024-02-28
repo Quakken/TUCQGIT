@@ -12,23 +12,35 @@ EditorBuildSettings:
     path: Assets/Scenes/Dialogue/Intro Dialogue.unity
     guid: f801ff7ca080dc94fb7bfa14b2851b7e
   - enabled: 1
-    path: Assets/Scenes/Minigames/Driving/Driving Part 1.unity
+    path: Assets/Scenes/Tutorials/Driving Tutorial.unity
+    guid: c3acd3f395f31e24fbc0ef4d847bce0d
+  - enabled: 1
+    path: Assets/Scenes/Minigames/Driving Part 1.unity
     guid: 84293af239e8e224daa023d23e3a1194
   - enabled: 1
     path: Assets/Scenes/Minigames/Shopping Test.unity
     guid: 45785a9a92ee36c4e9201bbf35879077
   - enabled: 1
+    path: Assets/Scenes/Tutorials/Shopping Tutorial.unity
+    guid: 29d10e1ae1801a84499e1cf5da812e69
+  - enabled: 1
     path: Assets/Scenes/Dialogue/Driving PT 2 Dialogue.unity
     guid: 967e594a7e76a8a40b1951819c84da34
   - enabled: 1
-    path: Assets/Scenes/Minigames/Driving/Driving Part 2.unity
+    path: Assets/Scenes/Minigames/Driving Part 2.unity
     guid: 74e3d383e2d84384aae56fbd7a615446
+  - enabled: 1
+    path: Assets/Scenes/Tutorials/Maze Tutorial.unity
+    guid: 3bdd668fda547f5408e4369ab8afa598
   - enabled: 1
     path: Assets/Scenes/Minigames/Maze Test.unity
     guid: 1fb1fe3a184eb5d49b00f65f162078d5
   - enabled: 1
     path: Assets/Scenes/Dialogue/Final Scene.unity
     guid: e0bad8398881ff546bb9903accc36001
+  - enabled: 1
+    path: Assets/Scenes/Dialogue/Bromance Ending.unity
+    guid: 29be5d45846e63944af1ee8a55bc3d2c
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: f5467f22ec274084b8273d7633b1652d

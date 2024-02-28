@@ -14,6 +14,7 @@ public class Collectible : MonoBehaviour
     public void OnFlowerCollected()
     {
         flowersCollected += 1;
+        print(flowersCollected);
         if (flowersCollected == 10)
         {
             MazeManager.secretEnding = true;
@@ -25,6 +26,7 @@ public class Collectible : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnFlowerCollected();
+            Destroy(gameObject);
         }
     }
 }

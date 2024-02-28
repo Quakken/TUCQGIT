@@ -1,49 +1,43 @@
 /*
 Name: Alice Pocek
 Date: 2/22/2024
-Desc: Add this to objects that are picked up by the player
+Desc: A script in which keeps track of the amount of collectables and changes the scene accordingly
 */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
 public class Collectible : MonoBehaviour
 {
-    public int points = 10;
+    public static OnFlowerCollected
 
-    //public AudioClip PickUpNoise;
-
-    public GameObject SpawnOnPickUp;
-
-    public object GameManager { get; private set; }
-
-    // Start is called before the first frame update
-    void Start()
+    Start()
     {
+        _charController = GetComponent<PlayerMovement>();
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
+        if (_charController is null)
         {
-            //GameManager.score += points;
-            AudioSource PAud = collision.gameObject.GetComponent<AudioSource>();
-            if (PAud != null)
+            Debug.LogError("Player movement is NULL");
+        }
+
+        Collectible.OnFlowerCollected += FlowerCollected;
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (!(OnFlowerCollected is null))
             {
-                //PAud.PlayOneShot(PickUpNoise);
+                OnFlowerCollected();
             }
-            if (SpawnOnPickUp != null)
-            {
-                Instantiate(SpawnOnPickUp, transform.position, transform.rotation);
-            }
-            Destroy(gameObject);
         }
     }
+    void OnDestroy()
+    {
+        Collectible.OnFlowerCollected -= FlowerCollected;
+    }
 }
+*/

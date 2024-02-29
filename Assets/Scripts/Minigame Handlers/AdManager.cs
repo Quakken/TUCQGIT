@@ -60,7 +60,6 @@ public class AdManager : MonoBehaviour
 
         // Choose a random spawn position
         int pos = Random.Range(0, adHolder.transform.childCount);
-        print(pos);
         
         // Keep searching for a valid spawn pos until all positions have been looped through
         for (int i = 0; i < adHolder.transform.childCount; i++)

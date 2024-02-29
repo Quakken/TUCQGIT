@@ -4018,10 +4018,10 @@ MonoBehaviour:
     loseOnIgnore: 0
   - name: Old Man
     contents: Ahahhh~ Salutations my fellow cool kids!
-    icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
-    ID: happy5
+    icon: {fileID: 21300000, guid: a42b4b22ddf02ce4e92c09d526b06764, type: 3}
+    ID: happy4
     reply: "(\u2229_\u2229) "
-    afterReply: happy6
+    afterReply: happy5
     afterIgnore: madOld
     loseOnIgnore: 0
   - name: Toast
@@ -4034,24 +4034,24 @@ MonoBehaviour:
     loseOnIgnore: 0
   - name: Old Man
     contents: Sonny? What's your favorite color?
-    icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
+    icon: {fileID: 21300000, guid: a42b4b22ddf02ce4e92c09d526b06764, type: 3}
     ID: madOld
     reply: "( \u0361\xBA \u25DE\u0644\u035F\u25DF \u0361\xBA)"
-    afterReply: happy4
+    afterReply: happy3
     afterIgnore: madOld
     loseOnIgnore: 0
   - name: Old Man
     contents: Ohhhhh, how I can't wait to feel young again..!
-    icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
-    ID: happy6
+    icon: {fileID: 21300000, guid: a42b4b22ddf02ce4e92c09d526b06764, type: 3}
+    ID: happy5
     reply: "( \u30FB\u25C7\u30FB)\uFF1F"
-    afterReply: happy7
+    afterReply: happy6
     afterIgnore: madOld
     loseOnIgnore: 0
   - name: Old Man
     contents: Party, party, party! Ohhhooohoo~
-    icon: {fileID: 21300000, guid: c1307b6af421a0c4aa84b69cc4f8a8bd, type: 3}
-    ID: happy7
+    icon: {fileID: 21300000, guid: a42b4b22ddf02ce4e92c09d526b06764, type: 3}
+    ID: happy6
     reply: "\u239D>\u203F<\u23A0"
     afterReply: happy1
     afterIgnore: madOld
@@ -4067,9 +4067,9 @@ MonoBehaviour:
   - name: Toast
     contents: You better show up, man! The party needs all of you here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
-    ID: happy4
+    ID: happy3
     reply: "( \u25D4 \u0296\u032F \u25D4 )"
-    afterReply: happy5
+    afterReply: happy4
     afterIgnore: mad4
     loseOnIgnore: 0
   - name: Toast
@@ -4079,7 +4079,7 @@ MonoBehaviour:
     reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy1
     afterIgnore: mad1
-    loseOnIgnore: 0
+    loseOnIgnore: 1
   notiDuration: 7
   notiSpacing: 3
   butterTextColor: {r: 0.754717, g: 0.28835887, b: 0.28835887, a: 1}

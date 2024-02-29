@@ -1103,50 +1103,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   notifications:
   - name: Toast
-    contents: Hey dude are you coming to the party today?
+    contents: You better show up soon!
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy1
-    reply: WHAAAA
+    reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy2
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: Oh awesome, how are things going
+    contents: Heading over yet?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy2
-    reply: No
+    reply: "(\u0361o\u203FO\u0361)"
     afterReply: happy3
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: 'Buddy? '
+    contents: Do you respond.. or...?
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad1
-    reply: Sorry, I'm here now
+    reply: "( \u0361 \xB0 \u0296\u032F \u0361\xB0)"
     afterReply: happy2
     afterIgnore: mad2
     loseOnIgnore: 0
   - name: Toast
-    contents: That's good to hear man
+    contents: Do you know that you don't need to bring anything. We all just need
+      you here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy3
-    reply: How about you?
+    reply: "\xAF\\_(\u30C4)_/\xAF"
     afterReply: happy4
     afterIgnore: mad1
     loseOnIgnore: 0
   - name: Toast
-    contents: Bro?
+    contents: Bro? You're not cool.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad2
-    reply: Sorry, am here now
+    reply: "(\uFE36\uFE39\uFE3A)"
     afterReply: happy2
     afterIgnore: mad1
     loseOnIgnore: 1
   - name: Toast
-    contents: I'm doing great my bro my man
+    contents: My man, you're awesome. Can't for everyone to be here.
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy4
-    reply: Nice
+    reply: "( \u0361\u25C9\u25DE \u035C\u0296\u25DF \u0361\u25C9)"
     afterReply: happy1
     afterIgnore: mad1
     loseOnIgnore: 0

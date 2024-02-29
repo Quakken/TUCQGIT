@@ -1140,7 +1140,7 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: mad2
     reply: "(\uFE36\uFE39\uFE3A)"
-    afterReply: happy2
+    afterReply: happy3
     afterIgnore: mad1
     loseOnIgnore: 1
   - name: Toast
@@ -1148,8 +1148,24 @@ MonoBehaviour:
     icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
     ID: happy4
     reply: "( \u0361\u25C9\u25DE \u035C\u0296\u25DF \u0361\u25C9)"
-    afterReply: happy1
+    afterReply: happy5
     afterIgnore: mad1
+    loseOnIgnore: 0
+  - name: Toast
+    contents: Come over now, dude! Bro, come on!
+    icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
+    ID: happy5
+    reply: "(\uFE36\uFE39\uFE3A)"
+    afterReply: happy6
+    afterIgnore: mad1
+    loseOnIgnore: 0
+  - name: Toast
+    contents: Bro. You're awesome, dude. Come to the party, don't be late.
+    icon: {fileID: 21300000, guid: 8692a770327b16945854ea783d639016, type: 3}
+    ID: happy6
+    reply: "(\u0361o\u203FO\u0361)"
+    afterReply: happy1
+    afterIgnore: mad2
     loseOnIgnore: 0
   notiDuration: 5
   notiSpacing: 3
